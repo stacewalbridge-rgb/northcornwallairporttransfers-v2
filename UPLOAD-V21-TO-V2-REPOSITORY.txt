@@ -1,0 +1,28 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V21 REFERENCE LAYOUT
+
+This version recreates the preferred homepage design:
+- Clean navigation across the top
+- Large airport terminal hero
+- Headline on the left
+- Immediate personalised quote panel
+- Popular destination cards
+- Trust strip
+- Why choose us section
+- Business accounts panel
+- Fully responsive mobile layout
+- No fake phone mockup on the live website
+
+UPLOAD TO YOUR NEW V2 REPOSITORY
+1. Extract this ZIP.
+2. Open:
+   Documents > GitHub > northcornwallairporttransfers-v2
+3. Copy everything inside the extracted V21 folder into the repository folder.
+4. Replace existing files when Windows asks.
+5. Open GitHub Desktop.
+6. Confirm the current repository is northcornwallairporttransfers-v2.
+7. Summary:
+   Upload V21 preferred reference layout
+8. Click Commit to main.
+9. Click Push origin.
+10. Cloudflare will deploy automatically.
+11. Check the live site in a private/incognito tab.

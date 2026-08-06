@@ -10,8 +10,8 @@
   <link rel="canonical" href="https://northcornwallairporttransfers.co.uk/">
   <link rel="icon" href="assets/favicon.svg">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="preload" as="image" href="assets/bristol-airport-transfer.webp">
-  <link rel="stylesheet" href="styles.css?v=20">
+  <link rel="preload" as="image" href="assets/neutral-airport-terminal.svg">
+  <link rel="stylesheet" href="styles.css?v=21">
 </head>
 <body class="v15-home">
 <a class="skip" href="#main">Skip to content</a>
@@ -39,58 +39,46 @@
   </div>
 </header>
 
-<main id="main">
-  
-<section class="showcase-hero preferred-hero">
-  <div class="wrap preferred-hero-grid">
-    <div class="preferred-hero-copy">
-      <span class="showcase-kicker">Airport • Seaport • Station • Long distance</span>
-      <h1>Travel well.<br><em>Arrive composed.</em></h1>
-      <p>Professional pre-booked airport, station, cruise-terminal and long-distance transfers throughout the UK.</p>
 
-      <div class="preferred-hero-points">
-        <span>Professional drivers</span>
-        <span>Flight-aware planning</span>
-        <span>Business accounts</span>
-        <span>Door-to-door travel</span>
-      </div>
+<main id="main" class="reference-home">
 
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#homepage-quote">Request a quote</a>
-        <a class="btn btn-light-outline" data-whatsapp href="#">WhatsApp us</a>
-      </div>
+  <section class="reference-hero">
+    <div class="reference-hero-image" aria-hidden="true"></div>
 
-      <div class="preferred-trust-note">
-        <strong>Direct support</strong>
-        <span>Call or WhatsApp: 07356 070904</span>
-      </div>
-    </div>
+    <div class="wrap reference-hero-inner">
+      <div class="reference-hero-copy">
+        <span class="reference-eyebrow">Executive transfers</span>
+        <h1>Travel well.<br><em>Arrive composed.</em></h1>
+        <p>Premium airport, rail, cruise-port and long-distance transfers throughout North Cornwall and across the UK.</p>
 
-    <div class="preferred-hero-media">
-      <img src="assets/neutral-airport-terminal.svg"
-           alt="Modern airport terminal"
-           width="1200" height="800">
-      <div class="preferred-media-caption">
-        <span>North Cornwall Airport Transfers</span>
-        <strong>Professional travel, arranged personally.</strong>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="quote-float-section" id="homepage-quote">
-    <div class="wrap">
-      <form id="quote-form" class="homepage-quote-panel">
-        <div class="quote-heading-row">
-          <div>
-            <span class="showcase-kicker">Plan your journey</span>
-            <h2>Request a personalised quote</h2>
-            <p>We’ll check the route, timing, luggage and suitable vehicle personally.</p>
-          </div>
-          <span class="no-payment">✓ No payment required</span>
+        <div class="reference-benefits" aria-label="Service benefits">
+          <div><span>◎</span><strong>Professional drivers</strong></div>
+          <div><span>✈</span><strong>Flight monitoring</strong></div>
+          <div><span>◇</span><strong>Personal quotations</strong></div>
+          <div><span>◷</span><strong>Direct support</strong></div>
         </div>
 
-        <div class="compact-quote-grid">
+        <div class="reference-actions">
+          <a class="btn btn-primary" href="#homepage-quote">Get a quote</a>
+          <a class="btn btn-outline" data-phone-link href="#">Call now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reference-quote-wrap" id="homepage-quote">
+    <div class="wrap">
+      <form id="quote-form" class="reference-quote-card">
+        <div class="reference-quote-heading">
+          <div>
+            <span class="reference-eyebrow">Plan your journey</span>
+            <h2>Request a personalised quote</h2>
+            <p>We’ll check the route, timing, passenger numbers, luggage and vehicle requirements personally.</p>
+          </div>
+          <span class="reference-no-payment">✓ No payment required</span>
+        </div>
+
+        <div class="reference-quote-grid">
           <div class="field">
             <label>Pickup location</label>
             <input name="pickup" required autocomplete="street-address" placeholder="Enter address or postcode">
@@ -107,83 +95,102 @@
             <label>Time</label>
             <input type="time" name="time" required>
           </div>
-          <div class="field compact-extra">
+          <div class="field">
             <label>Passengers</label>
-            <select name="passengers"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8+</option></select>
+            <select name="passengers">
+              <option>1</option><option>2</option><option>3</option><option>4</option>
+              <option>5</option><option>6</option><option>7</option><option>8+</option>
+            </select>
           </div>
-          <div class="field compact-extra">
-            <label>Large cases</label>
-            <select name="luggage"><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select>
-          </div>
-          <div class="field compact-extra">
+          <button type="button" class="btn btn-primary reference-submit" data-send-method="whatsapp">
+            Get quote
+          </button>
+
+          <div class="field reference-details">
             <label>Name</label>
             <input name="name" required autocomplete="name">
           </div>
-          <div class="field compact-extra">
+          <div class="field reference-details">
             <label>Telephone</label>
             <input name="phone" required autocomplete="tel">
           </div>
-          <div class="field compact-extra full">
+          <div class="field reference-details">
             <label>Email</label>
             <input type="email" name="email" required autocomplete="email">
           </div>
-          <div class="field compact-extra full">
+          <div class="field reference-details">
+            <label>Large cases</label>
+            <select name="luggage">
+              <option>0</option><option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5</option><option>6+</option>
+            </select>
+          </div>
+          <div class="field reference-details reference-full">
             <label>Journey details or special requirements</label>
             <textarea name="details" placeholder="Flight number, return journey, child seats or other details"></textarea>
           </div>
         </div>
 
-        <div class="quote-send-options" aria-labelledby="send-choice-title">
-          <span class="send-step-label">Choose how to send</span>
-          <h3 id="send-choice-title">Your journey details will be prepared automatically</h3>
-          <div class="quote-send-grid">
-            <button type="button" class="btn btn-whatsapp quote-send-btn" data-send-method="whatsapp">
-              <span class="send-number">1</span>
-              <span><strong>WhatsApp</strong><small>Recommended • quickest response</small></span>
-            </button>
-            <button type="button" class="btn btn-email quote-send-btn" data-send-method="email">
-              <span class="send-number">2</span>
-              <span><strong>Email</strong><small>Open your email provider</small></span>
-            </button>
-            <button type="button" class="btn btn-sms quote-send-btn" data-send-method="sms">
-              <span class="send-number">3</span>
-              <span><strong>Text message</strong><small>Open your messaging app</small></span>
-            </button>
-          </div>
-          <p class="form-status" aria-live="polite"></p>
+        <div class="reference-send-row">
+          <button type="button" class="btn btn-whatsapp" data-send-method="whatsapp">WhatsApp quote</button>
+          <button type="button" class="btn btn-email" data-send-method="email">Email quote</button>
+          <button type="button" class="btn btn-sms" data-send-method="sms">Text quote</button>
         </div>
+        <p class="form-status" aria-live="polite"></p>
       </form>
     </div>
   </section>
 
-  <section class="section destinations-showcase">
+  <section class="reference-destinations section">
     <div class="wrap">
-      <div class="showcase-section-head">
-        <span class="showcase-kicker">Where can we take you?</span>
-        <h2>Popular transfer services</h2>
-        <p>Pre-booked, door-to-door travel to airports, stations, ports and destinations throughout the UK.</p>
+      <div class="reference-section-heading">
+        <span class="reference-eyebrow">Where can we take you?</span>
+        <h2>Popular destinations</h2>
       </div>
 
-      <div class="service-showcase-grid">
-        <a class="service-showcase-card" href="airports.html">
+      <div class="reference-card-grid">
+        <a class="reference-service-card" href="airports.html">
           <img src="assets/heathrow-card.webp" alt="Airport terminal">
-          <div><span class="service-icon">✈</span><h3>Airport Transfers</h3><p>Heathrow, Gatwick, Bristol, Exeter, Newquay and more.</p><strong>View airports →</strong></div>
+          <div>
+            <span class="reference-card-icon">✈</span>
+            <h3>Airport Transfers</h3>
+            <p>Heathrow, Gatwick, Bristol, Exeter, Newquay and more.</p>
+            <strong>View airports →</strong>
+          </div>
         </a>
-        <a class="service-showcase-card" href="stations.html">
+
+        <a class="reference-service-card" href="stations.html">
           <img src="assets/exeter-st-davids.webp" alt="Train station">
-          <div><span class="service-icon">▣</span><h3>Train Stations</h3><p>Exeter, Plymouth, Paddington, Bodmin Parkway and more.</p><strong>View stations →</strong></div>
+          <div>
+            <span class="reference-card-icon">▣</span>
+            <h3>Train Stations</h3>
+            <p>Exeter, Plymouth, Paddington, Bodmin Parkway and more.</p>
+            <strong>View stations →</strong>
+          </div>
         </a>
-        <a class="service-showcase-card" href="ports.html">
+
+        <a class="reference-service-card" href="ports.html">
           <img src="assets/cruise-port-transfer.webp" alt="Cruise ship at port">
-          <div><span class="service-icon">♢</span><h3>Cruise Ports</h3><p>Southampton, Falmouth, Plymouth, Portsmouth and more.</p><strong>View ports →</strong></div>
+          <div>
+            <span class="reference-card-icon">♢</span>
+            <h3>Cruise Ports</h3>
+            <p>Southampton, Falmouth, Plymouth, Portsmouth and more.</p>
+            <strong>View ports →</strong>
+          </div>
         </a>
-        <a class="service-showcase-card" href="quote.html">
-          <img src="assets/coast-airport.svg" alt="Long-distance coastal road">
-          <div><span class="service-icon">⌖</span><h3>Long Distance</h3><p>Private UK-wide travel arranged around your requirements.</p><strong>Plan a journey →</strong></div>
+
+        <a class="reference-service-card" href="quote.html">
+          <img src="assets/coast-airport.svg" alt="Long-distance coastal route">
+          <div>
+            <span class="reference-card-icon">⌖</span>
+            <h3>Long Distance</h3>
+            <p>Private travel throughout the UK, arranged around you.</p>
+            <strong>Plan a journey →</strong>
+          </div>
         </a>
       </div>
 
-      <div class="trust-strip">
+      <div class="reference-trust-strip">
         <div><span>◇</span><strong>Personal quotations</strong><small>Clear journey pricing</small></div>
         <div><span>✈</span><strong>Flight-aware planning</strong><small>Arrival details considered</small></div>
         <div><span>◎</span><strong>Meet and greet</strong><small>Arranged where agreed</small></div>
@@ -192,50 +199,45 @@
     </div>
   </section>
 
-  <section class="section why-showcase">
-    <div class="wrap why-grid">
-      <div>
-        <span class="showcase-kicker">Why choose us?</span>
+  <section class="reference-why section">
+    <div class="wrap reference-why-grid">
+      <div class="reference-why-copy">
+        <span class="reference-eyebrow">Why choose us?</span>
         <h2>Reliable. Professional.<br>Every journey.</h2>
         <p>Local route knowledge combined with careful planning for comfortable, dependable pre-booked travel.</p>
-        <ul class="luxury-checks">
+        <ul>
           <li>Direct, friendly communication</li>
-          <li>Vehicle suitability checked against passengers and luggage</li>
-          <li>Airport, station, seaport and long-distance experience</li>
+          <li>Passenger and luggage suitability checked</li>
+          <li>Airport, rail, cruise-port and long-distance experience</li>
           <li>Business and leisure clients welcome</li>
         </ul>
         <a class="btn btn-primary" href="about.html">About us</a>
       </div>
-      <div class="why-image">
-        <img src="assets/bristol-card.webp" alt="Airport terminal interior">
+      <div class="reference-why-image">
+        <img src="assets/airport-arrival.svg" alt="Modern airport terminal interior">
       </div>
     </div>
   </section>
 
-  <section class="section business-showcase">
-    <div class="wrap business-showcase-panel">
-      <div class="business-roundel">▣</div>
+  <section class="reference-business section">
+    <div class="wrap reference-business-card">
+      <div class="reference-business-icon">▣</div>
       <div>
-        <span class="showcase-kicker">Business accounts</span>
+        <span class="reference-eyebrow">Business accounts</span>
         <h2>We welcome business clients.</h2>
-        <p>Regular and one-off bookings, professional communication and a range of payment methods available by agreement.</p>
+        <p>Monthly invoicing, account facilities and a range of payment methods are available.</p>
       </div>
       <ul>
-        <li>Corporate and staff travel</li>
-        <li>Guest and visitor transfers</li>
-        <li>Card, bank transfer or agreed account terms</li>
+        <li>Corporate travel</li>
+        <li>Regular or one-off bookings</li>
+        <li>Card, transfer or account terms</li>
       </ul>
-      <a class="btn btn-gold" href="business-accounts.html">Business accounts</a>
+      <a class="btn btn-gold" href="business-accounts.html">Business accounts →</a>
     </div>
   </section>
 
-  <section class="install-app" id="install-app">
-    <div class="wrap install-inner">
-      <span><strong>Add North Cornwall Airport Transfers to your phone</strong><small>Install the website like an app for faster access.</small></span>
-      <button class="btn btn-dark" id="install-button" type="button">Install</button>
-    </div>
-  </section>
 </main>
+
 
 <footer class="footer v15-footer">
   <div class="wrap">
@@ -261,7 +263,7 @@
   <a class="btn btn-whatsapp" data-whatsapp href="#">WhatsApp</a>
 </div>
 
-<script src="site-config.js?v=20"></script>
-<script src="app.js?v=20"></script>
+<script src="site-config.js?v=21"></script>
+<script src="app.js?v=21"></script>
 </body>
 </html>
