@@ -1,0 +1,6 @@
+1. Edit site-config.js with the airport number and WhatsApp number.
+3. Upload all V2 files into the current GitHub repository and replace existing files.
+4. Deploy with Cloudflare Pages, not Workers.
+5. Add northcornwallairporttransfers.co.uk as the main custom domain.
+6. Redirect northcornwalltransfers.co.uk to the main domain.
+7. Test every page, call button, WhatsApp link and form.

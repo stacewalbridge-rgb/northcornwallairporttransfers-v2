@@ -1,0 +1,19 @@
+{
+  "name": "North Cornwall Airport Transfers",
+  "short_name": "NC Transfers",
+  "description": "Airport, station, seaport and long-distance transfer enquiries.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#edf6fc",
+  "theme_color": "#0b2944",
+  "icons": [
+    {
+      "src": "/assets/brand-logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}

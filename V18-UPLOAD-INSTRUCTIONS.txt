@@ -1,0 +1,18 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V18 HOMEPAGE HERO FIX
+
+Fixed:
+- Removed the strange white aeroplane overlay.
+- Bristol artwork is now a real responsive image instead of a cropped background.
+- Mobile displays the complete image within the screen width.
+- Desktop keeps the split luxury layout.
+- Homepage text no longer runs beyond the screen.
+- New cache version forces phones to receive the correction.
+
+Upload:
+1. Extract the ZIP.
+2. Copy all files into Documents > GitHub > northcornwallairporttransfers.
+3. Replace existing files.
+4. GitHub Desktop commit: Upload V18 homepage hero mobile fix
+5. Commit to main and Push origin.
+6. Wait for Cloudflare deployment.
+7. Open the homepage in an incognito/private tab.

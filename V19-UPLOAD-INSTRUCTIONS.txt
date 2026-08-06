@@ -1,0 +1,22 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V19 PREFERRED SPLIT HERO
+
+Homepage changes:
+- Rebuilt the top to match the preferred reference layout.
+- Full desktop navigation.
+- Text and calls to action on the left.
+- Neutral airport-terminal photography on the right.
+- No Bristol promotional banner as the main brand image.
+- No strange side panel.
+- Quote panel sits neatly beneath the hero.
+- Mobile automatically stacks image, text, benefits and quote form.
+- Mobile image uses contain so it is never cropped.
+- Updated cache version.
+
+Upload:
+1. Extract the ZIP.
+2. Copy all files into Documents > GitHub > northcornwallairporttransfers.
+3. Replace existing files.
+4. GitHub Desktop commit: Upload V19 preferred split hero
+5. Commit to main and Push origin.
+6. Wait for Cloudflare deployment.
+7. Test homepage in an incognito/private tab on desktop and mobile.

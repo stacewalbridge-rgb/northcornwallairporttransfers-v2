@@ -1,0 +1,28 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V7 EASY UPLOAD
+
+You already cloned the GitHub repository using GitHub Desktop.
+
+DO THIS:
+1. Right-click this ZIP and choose Extract All.
+2. Open the extracted folder.
+3. Press Ctrl+A, then Ctrl+C.
+4. In GitHub Desktop, click Repository > Show in Explorer.
+5. In the repository folder, press Ctrl+A and Delete.
+   IMPORTANT: Do not delete the hidden .git folder. Windows normally keeps it hidden and it will not be selected.
+6. Press Ctrl+V to paste the V7 files into the repository folder.
+7. Choose Replace files in the destination if Windows asks.
+8. Return to GitHub Desktop. It should show many changed files.
+9. In Summary type: Upload V7 premium mobile website
+10. Click Commit to main.
+11. Click Push origin.
+12. In Cloudflare > Workers & Pages > northcornwallairporttransfers > Deployments, wait for Success.
+13. Open https://northcornwallairporttransfers.co.uk and press Ctrl+F5.
+
+PHONE TEST:
+- Open the site on your phone in a private/incognito tab.
+- Check the menu, Call button, WhatsApp button, quote form, airport pages, stations and seaports.
+
+CONTACT DETAILS USED:
+Phone/WhatsApp: 07356 070904
+Email: info@northcornwallairporttransfers.co.uk
+Website: https://northcornwallairporttransfers.co.uk

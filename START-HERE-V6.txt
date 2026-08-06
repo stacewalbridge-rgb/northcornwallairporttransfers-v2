@@ -1,0 +1,23 @@
+NORTH CORNWALL AIRPORT TRANSFERS V6 PREMIUM
+
+UPLOAD
+1. Unzip this file.
+2. Open the existing GitHub repository.
+3. Add file > Upload files.
+4. Upload EVERYTHING inside this folder, replacing existing files.
+5. Commit changes.
+6. Wait for Cloudflare to show a successful deployment.
+7. Open the website in a private/incognito tab first.
+8. On Windows press Ctrl+F5. On a phone clear the site cache if the old version remains.
+
+TEST
+- Homepage on phone and desktop.
+- Menu.
+- Call and WhatsApp buttons.
+- Quote form.
+- Heathrow, Bristol, Exeter, Newquay and Cardiff pages.
+- Stations and Seaports menu pages.
+- /sitemap.xml
+
+APP
+This version is installable as a PWA. See APP-NEXT-STEPS.txt.

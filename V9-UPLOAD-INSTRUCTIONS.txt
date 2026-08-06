@@ -1,0 +1,13 @@
+V9 SMART WEBSITE
+
+1. Extract this ZIP.
+2. Copy every file and folder into the cloned GitHub repository.
+3. Replace existing files when Windows asks.
+4. Return to GitHub Desktop.
+5. Commit with: Upload V9 smart professional website
+6. Push origin.
+7. Wait for Cloudflare deployment success.
+8. Refresh the website using Ctrl+F5.
+9. On Android, clear the browser site cache or use an incognito tab if an older logo appears.
+
+This version keeps North Cornwall Airport Transfers completely separate from Rob's Travel.

@@ -1,0 +1,10 @@
+V8 MODERN NATIONWIDE UPDATE
+
+The wording no longer suggests that journeys are limited to North Cornwall or North Devon.
+
+The site now states that:
+- local and long-distance transfers are available;
+- any pickup or destination can be requested;
+- airports, ports, stations and destinations throughout the UK are covered by arrangement.
+
+Upload all files into the existing GitHub repository, commit and push.

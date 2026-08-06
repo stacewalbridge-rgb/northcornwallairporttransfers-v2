@@ -1,0 +1,29 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V13 DISTINCT LUXURY DESIGN
+
+This version is deliberately visually separate from Rob's Travel.
+
+Design identity:
+- Ivory, graphite and champagne colour palette
+- Editorial serif headings and restrained modern body text
+- Asymmetrical split hero layout
+- Minimal square-edged buttons and panels
+- Large photographic destination tiles
+- Reduced use of ordinary boxed cards
+- Distinct luxury/corporate presentation
+- Refined mobile layout
+- WhatsApp, email and text quotation options
+- Corporate accounts page
+- Professional domain email
+
+UPLOAD:
+1. Extract the ZIP.
+2. Copy all files and folders into:
+   Documents > GitHub > northcornwallairporttransfers
+3. Choose Replace files in the destination.
+4. In GitHub Desktop use commit message:
+   Upload V13 distinct luxury website
+5. Commit to main.
+6. Push origin.
+7. Wait for Cloudflare deployment success.
+8. Open the site in an incognito/private window first.
+9. On Android, clear site data if an older installed version remains.

@@ -1,0 +1,1 @@
+Create a Cloudflare 301 redirect from northcornwalltransfers.co.uk to https://northcornwallairporttransfers.co.uk and preserve the path and query string.

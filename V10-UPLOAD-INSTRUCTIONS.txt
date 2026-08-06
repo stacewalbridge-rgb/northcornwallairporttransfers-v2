@@ -1,0 +1,22 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V10 MOBILE PROFESSIONAL
+
+Professional contact email used everywhere:
+info@northcornwallairporttransfers.co.uk
+
+UPLOAD:
+1. Extract this ZIP.
+2. Copy all files and folders into Documents > GitHub > northcornwallairporttransfers.
+3. Choose Replace files in the destination.
+4. In GitHub Desktop enter: Upload V10 mobile professional website
+5. Click Commit to main.
+6. Click Push origin.
+7. Wait for Cloudflare deployment success.
+
+PHONE CHECK:
+- First open the website in an incognito/private tab.
+- If an old version remains, clear site data for northcornwallairporttransfers.co.uk.
+- The V10 service worker automatically deletes earlier cached versions.
+
+The quote form opens the visitor's email application with the journey details already prepared
+and addressed to info@northcornwallairporttransfers.co.uk. For background form submission without opening an email app,
+a form endpoint or Cloudflare Worker can be connected later.

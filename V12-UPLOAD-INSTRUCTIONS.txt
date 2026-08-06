@@ -1,0 +1,22 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V12 PREMIUM BUSINESS
+
+New:
+- Premium mobile and desktop refinements.
+- Dedicated Business Accounts tab and page.
+- Business clients welcomed clearly.
+- Various payment methods described.
+- Smarter homepage business account panel.
+- More premium quote sending choices.
+- WhatsApp remains the recommended first option.
+- Updated cache version for phones and installed app.
+
+Upload:
+1. Extract this ZIP.
+2. Copy every file and folder into Documents > GitHub > northcornwallairporttransfers.
+3. Replace existing files.
+4. Open GitHub Desktop.
+5. Commit message: Upload V12 premium business website
+6. Commit to main.
+7. Push origin.
+8. Wait for Cloudflare deployment success.
+9. Open the site in an incognito/private tab first.

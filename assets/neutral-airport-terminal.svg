@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#98c8e5"/>
+    <stop offset=".65" stop-color="#eaf5fb"/>
+    <stop offset="1" stop-color="#f8fbfd"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#c8e7f4"/>
+    <stop offset=".5" stop-color="#7fb3cf"/>
+    <stop offset="1" stop-color="#2f617c"/>
+  </linearGradient>
+  <linearGradient id="road" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#69737a"/>
+    <stop offset="1" stop-color="#2f383e"/>
+  </linearGradient>
+</defs>
+
+<rect width="1600" height="1000" fill="url(#sky)"/>
+<circle cx="1320" cy="155" r="70" fill="#f4cf79" opacity=".9"/>
+
+<!-- terminal -->
+<path d="M120 600 L315 300 L1330 300 L1490 600 Z" fill="#153349"/>
+<rect x="195" y="405" width="1190" height="280" rx="10" fill="url(#glass)"/>
+
+<!-- terminal glazing -->
+<g stroke="#d8eef7" stroke-width="9" opacity=".9">
+  <line x1="360" y1="405" x2="360" y2="685"/>
+  <line x1="530" y1="405" x2="530" y2="685"/>
+  <line x1="700" y1="405" x2="700" y2="685"/>
+  <line x1="870" y1="405" x2="870" y2="685"/>
+  <line x1="1040" y1="405" x2="1040" y2="685"/>
+  <line x1="1210" y1="405" x2="1210" y2="685"/>
+</g>
+
+<!-- entrance -->
+<rect x="685" y="500" width="230" height="185" fill="#17374f"/>
+<rect x="710" y="525" width="80" height="160" fill="#9fcfe2"/>
+<rect x="810" y="525" width="80" height="160" fill="#9fcfe2"/>
+
+<!-- airport sign -->
+<rect x="560" y="330" width="480" height="82" rx="8" fill="#f8fbfc"/>
+<text x="800" y="386" text-anchor="middle" font-family="Arial, sans-serif" font-size="43" font-weight="700" fill="#12344f">AIRPORT TERMINAL</text>
+
+<!-- road and paving -->
+<rect y="685" width="1600" height="315" fill="#d7d5cf"/>
+<path d="M0 850 C380 790 800 790 1600 840 V1000 H0 Z" fill="url(#road)"/>
+<path d="M0 885 C420 825 880 830 1600 880" fill="none" stroke="#e2bf61" stroke-width="12" stroke-dasharray="52 34"/>
+
+<!-- landscaping -->
+<g fill="#638a64">
+  <ellipse cx="180" cy="710" rx="120" ry="38"/>
+  <ellipse cx="1420" cy="710" rx="120" ry="38"/>
+</g>
+<g fill="#84a66c">
+  <circle cx="110" cy="675" r="28"/>
+  <circle cx="175" cy="667" r="35"/>
+  <circle cx="1430" cy="670" r="33"/>
+  <circle cx="1490" cy="680" r="27"/>
+</g>
+
+<!-- aircraft silhouette in sky -->
+<path d="M1060 145 l235 75 -85 31 -63 145 -43 -15 21 -119 -136 44 -42 -26 129 -78 -16 -57z"
+      fill="#ffffff" opacity=".9"/>
+</svg>

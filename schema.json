@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@type": "TaxiService",
+  "name": "North Cornwall Airport Transfers",
+  "url": "https://northcornwallairporttransfers.co.uk",
+  "telephone": "+447356070904",
+  "email": "info@northcornwallairporttransfers.co.uk",
+  "areaServed": [
+    "North Cornwall",
+    "Bude",
+    "Launceston",
+    "Wadebridge",
+    "Camelford",
+    "Boscastle",
+    "Tintagel",
+    "Holsworthy",
+    "Padstow"
+  ],
+  "priceRange": "\u00a3\u00a3",
+  "description": "Private pre-booked airport transfers from North Cornwall to airports throughout the UK."
+}

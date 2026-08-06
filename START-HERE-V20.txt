@@ -1,0 +1,31 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V20 CLEAN PACKAGE
+
+This is a fresh complete website package.
+
+KEY CHANGES
+- Preferred split homepage layout.
+- Neutral airport-terminal hero image.
+- No Bristol Airport branding on the homepage.
+- Responsive desktop, tablet and mobile layouts.
+- WhatsApp, email and text quote options.
+- Business accounts page.
+- Updated mobile image handling.
+- Fresh cache version.
+
+IMPORTANT — AVOID MERGE CONFLICTS
+1. In GitHub Desktop, click Repository > Fetch origin.
+2. If you see Pull origin, click it BEFORE copying the new files.
+3. Extract this ZIP.
+4. Open Documents > GitHub > northcornwallairporttransfers.
+5. Copy all files from the extracted V20 folder into the repository folder.
+6. Choose Replace files in the destination.
+7. Return to GitHub Desktop.
+8. Do NOT click Pull origin again.
+9. Enter commit message:
+   Upload V20 clean airport transfer website
+10. Click Commit to main.
+11. Click Push origin.
+12. Wait for Cloudflare deployment success.
+13. Open the website in an incognito/private tab.
+
+If GitHub shows a merge-conflict window, click Abort merge and stop before continuing.

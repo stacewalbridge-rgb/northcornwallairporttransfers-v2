@@ -1,0 +1,18 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V17 CORRECT DESTINATION CARDS
+
+Corrected:
+- Bodmin Parkway no longer uses Exeter St Davids artwork.
+- Newquay Station no longer uses Newquay Airport artwork.
+- Station and seaport titles now sit below images rather than over embedded wording.
+- Airport listing cards use the same cleaner structure.
+- Mobile cards show the full image without clipping.
+- Call/WhatsApp bar has extra clearance and no longer covers the final card.
+
+Upload:
+1. Extract the ZIP.
+2. Copy everything into Documents > GitHub > northcornwallairporttransfers.
+3. Replace existing files.
+4. GitHub Desktop commit: Upload V17 correct destination cards
+5. Commit to main and Push origin.
+6. Wait for Cloudflare deployment.
+7. Test Stations, Seaports and Airports in an incognito tab.

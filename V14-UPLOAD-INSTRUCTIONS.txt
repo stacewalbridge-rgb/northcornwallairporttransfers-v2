@@ -1,0 +1,20 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V14 CONTACT FIX
+
+Fixed:
+- Call, WhatsApp and Email links are now completely separate.
+- Email opens the visitor's email app using mailto.
+- Call opens the phone dialler.
+- WhatsApp opens WhatsApp.
+- Contact wording and links no longer run together.
+- Mobile layout stacks the three choices clearly.
+- Cache version updated.
+
+Upload:
+1. Extract this ZIP.
+2. Copy all files into Documents > GitHub > northcornwallairporttransfers.
+3. Replace existing files.
+4. GitHub Desktop commit: Upload V14 contact link fix
+5. Commit to main.
+6. Push origin.
+7. Wait for Cloudflare deployment success.
+8. Test contact page in a private/incognito tab.

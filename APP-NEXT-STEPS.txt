@@ -1,0 +1,12 @@
+APP OPTIONS
+
+The V6 site is already a Progressive Web App (PWA). Customers can install it from supported Android browsers and it opens without normal browser controls.
+
+Recommended stages:
+1. PWA now: installable website, call/WhatsApp and quote form.
+2. Booking app: customer accounts, saved journeys, live quotes and confirmations.
+3. Driver app: jobs, navigation, status updates and proof of pickup.
+4. Admin dashboard: bookings, pricing, drivers, emails and reports.
+5. Native Android/iPhone publishing after the booking workflow is proven.
+
+Do not pay Apple/Google developer fees until the live website quote process has been tested and real customer requirements are clear.

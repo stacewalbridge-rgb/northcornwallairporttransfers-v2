@@ -1,0 +1,26 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V15 RESPONSIVE SHOWCASE
+
+This version follows the approved desktop and mobile design:
+- Airport terminal hero with no vehicle
+- Desktop and mobile layouts automatically switch using responsive CSS
+- Powder-blue quote and information panels
+- Professional navy, gold and white colour scheme
+- Quote by WhatsApp, email or text
+- Popular service cards
+- Business accounts section
+- Correct right-biased cropping on airport/station images
+- Mobile sticky actions no longer cover card information
+- Updated cache version
+
+UPLOAD:
+1. Extract the ZIP.
+2. Copy all files and folders into:
+   Documents > GitHub > northcornwallairporttransfers
+3. Replace existing files.
+4. In GitHub Desktop enter:
+   Upload V15 responsive showcase website
+5. Commit to main.
+6. Push origin.
+7. Wait for Cloudflare to deploy.
+8. Open in an incognito/private window first.
+9. Test at desktop width and on your Android phone.

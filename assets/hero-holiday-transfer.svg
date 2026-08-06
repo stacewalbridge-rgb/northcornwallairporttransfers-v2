@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1050">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#5fc8ee"/><stop offset=".68" stop-color="#e8f9ff"/></linearGradient>
+<linearGradient id="sea" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2bb0ca"/><stop offset="1" stop-color="#0a648f"/></linearGradient>
+<linearGradient id="road" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#48525a"/><stop offset="1" stop-color="#161d23"/></linearGradient>
+</defs>
+<rect width="1800" height="1050" fill="url(#sky)"/>
+<circle cx="1440" cy="160" r="96" fill="#ffd969"/>
+<path d="M0 550 Q290 430 610 565 T1210 520 T1800 470V1050H0Z" fill="#4d8752"/>
+<path d="M0 650 Q300 500 690 650 T1390 600 T1800 565V1050H0Z" fill="#e5c57d"/>
+<path d="M0 735 Q310 570 710 740 T1410 690 T1800 645V1050H0Z" fill="url(#sea)"/>
+<path d="M560 1050 C735 810 950 705 1190 640 C1430 575 1610 490 1800 340 L1800 1050Z" fill="url(#road)"/>
+<path d="M710 1050 C870 855 1040 780 1235 720 C1450 653 1630 555 1800 395" fill="none" stroke="#f3d16e" stroke-width="14" stroke-dasharray="48 38"/>
+<g transform="translate(1190 600)">
+<ellipse cx="155" cy="175" rx="185" ry="24" fill="#05101a" opacity=".22"/>
+<rect x="0" y="73" width="320" height="106" rx="35" fill="#0d253b"/>
+<path d="M42 73 L99 16 H229 L280 73Z" fill="#164b70"/>
+<rect x="110" y="31" width="100" height="36" rx="7" fill="#bce9fa"/>
+<rect x="18" y="100" width="64" height="12" rx="6" fill="#e5b957"/>
+<circle cx="70" cy="181" r="39" fill="#10161c"/><circle cx="253" cy="181" r="39" fill="#10161c"/>
+<circle cx="70" cy="181" r="17" fill="#dbe3e8"/><circle cx="253" cy="181" r="17" fill="#dbe3e8"/>
+</g>
+<path d="M1070 125 l215 72 -82 30 -58 134 -40-14 20-112 -127 42 -38-24 119-72 -9-56z" fill="#fff" opacity=".96"/>
+<g transform="translate(215 555)">
+<rect x="0" y="58" width="120" height="105" rx="18" fill="#9b5fb1"/>
+<rect x="130" y="30" width="145" height="133" rx="20" fill="#164f77"/>
+<rect x="42" y="25" width="35" height="35" rx="9" fill="#9b5fb1"/>
+<rect x="184" y="0" width="37" height="36" rx="9" fill="#164f77"/>
+<circle cx="25" cy="168" r="13" fill="#313941"/><circle cx="95" cy="168" r="13" fill="#313941"/>
+<circle cx="158" cy="168" r="13" fill="#313941"/><circle cx="247" cy="168" r="13" fill="#313941"/>
+</g>
+</svg>

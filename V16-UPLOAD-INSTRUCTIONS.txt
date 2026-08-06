@@ -1,0 +1,21 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V16 MOBILE IMAGE FIX
+
+Fixed on every individual airport and station page:
+- Complete promotional artwork is shown on mobile without cropping.
+- Left-side airport/station wording is no longer chopped off.
+- Images use contain sizing rather than cover sizing.
+- Desktop images remain large, centred and sharp.
+- Powder-blue image presentation panel added.
+- Oversized mobile gaps reduced.
+- Extra bottom clearance prevents the Call/WhatsApp bar covering content.
+- Cache updated to V16.
+
+UPLOAD:
+1. Extract this ZIP.
+2. Copy all files and folders into Documents > GitHub > northcornwallairporttransfers.
+3. Replace existing files.
+4. GitHub Desktop commit: Upload V16 mobile destination image fix
+5. Commit to main.
+6. Push origin.
+7. Wait for Cloudflare deployment.
+8. Test Heathrow, Exeter, Bristol and a station page in a private/incognito tab.

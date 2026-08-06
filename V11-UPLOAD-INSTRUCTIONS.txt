@@ -1,0 +1,19 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V11 CONTACT OPTIONS
+
+Changes:
+- WhatsApp is the first and recommended quotation option.
+- Email is the second option.
+- Text message is the third option.
+- All form details are inserted automatically into the chosen message.
+- The install banner text has been made much darker and easier to read.
+- Cache version updated so phones receive the new version.
+
+Upload:
+1. Extract this ZIP.
+2. Copy all files into Documents > GitHub > northcornwallairporttransfers.
+3. Replace the existing files.
+4. In GitHub Desktop enter: Upload V11 WhatsApp email and text quote options
+5. Commit to main.
+6. Push origin.
+7. Wait for Cloudflare deployment success.
+8. Open the website in a private/incognito tab first.
