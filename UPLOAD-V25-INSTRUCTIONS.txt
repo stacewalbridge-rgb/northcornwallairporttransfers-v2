@@ -1,0 +1,22 @@
+V25 MOBILE MENU FIX
+
+This fixes the menu shown permanently on mobile.
+
+The menu now:
+- Starts closed
+- Opens when the three-line button is tapped
+- Closes when the button is tapped again
+- Closes when a menu link is selected
+- Closes when Escape is pressed
+- Resets when returning to desktop width
+
+UPLOAD:
+1. Extract this ZIP.
+2. Open Documents > GitHub > northcornwallairporttransfers-v2
+3. Delete the existing contents of the repository folder.
+4. Copy everything inside this V25 folder into it.
+5. Commit:
+   Upload V25 mobile menu fix
+6. Push origin.
+7. Wait for Cloudflare.
+8. Test in a private/incognito tab.

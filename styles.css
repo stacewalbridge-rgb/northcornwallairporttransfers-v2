@@ -2734,3 +2734,31 @@ main > .section:has(.feature-image){
     line-height:1.5;
   }
 }
+
+
+/* =========================================================
+   V25 — MOBILE MENU VISIBILITY FIX
+   ========================================================= */
+
+/* The hidden HTML attribute must always win. */
+.p23-mobile-nav[hidden]{
+  display:none !important;
+}
+
+@media(max-width:850px){
+  .p23-mobile-nav:not([hidden]){
+    display:grid !important;
+    animation:p23MenuOpen .18s ease-out;
+  }
+}
+
+@keyframes p23MenuOpen{
+  from{
+    opacity:0;
+    transform:translateY(-8px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
