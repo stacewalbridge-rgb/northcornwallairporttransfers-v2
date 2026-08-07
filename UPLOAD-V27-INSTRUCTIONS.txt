@@ -1,0 +1,24 @@
+V27 — NATIVE MOBILE MENU (NO JAVASCRIPT)
+
+This fixes the unreliable hamburger menu by using the browser's native
+<details>/<summary> control.
+
+Behaviour:
+- Desktop: normal navigation bar remains visible.
+- Mobile/tablet: hamburger icon appears.
+- Tap once: dropdown opens.
+- Tap again: dropdown closes.
+- Icon changes from three lines to an X while open.
+- Does not depend on JavaScript, so it is far more reliable on Android/iPhone.
+- Updated service worker reduces stale cached CSS/HTML.
+
+UPLOAD:
+1. Extract this ZIP.
+2. Open Documents > GitHub > northcornwallairporttransfers-v2
+3. Delete the contents INSIDE the repository folder (not the repository folder).
+4. Copy everything from this extracted V27 folder into it.
+5. GitHub Desktop commit:
+   Upload V27 native working menu
+6. Push origin.
+7. Wait for Cloudflare deployment.
+8. Open the site in a Private/Incognito tab.

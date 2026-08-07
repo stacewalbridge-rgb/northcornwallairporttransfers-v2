@@ -11,7 +11,7 @@
   <link rel="icon" href="assets/favicon.svg">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" as="image" href="assets/hero-reference.webp">
-  <link rel="stylesheet" href="styles.css?v=26">
+  <link rel="stylesheet" href="styles.css?v=27">
 </head>
 <body class="p23-body">
 <a class="skip" href="#main">Skip to content</a>
@@ -35,20 +35,22 @@
 
     <a class="p23-phone" data-phone-link href="#"><span>☎</span><b data-phone-display>07356 070904</b></a>
 
-    <button class="p23-menu" type="button" aria-controls="p23-mobile-nav" aria-expanded="false">
-      <span></span><span></span><span></span><b>Menu</b>
-    </button>
+    <details class="p27-menu">
+      <summary aria-label="Open navigation menu">
+        <span class="p27-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+        <b>Menu</b>
+      </summary>
+      <nav class="p27-dropdown" aria-label="Mobile menu">
+        <a href="index.html">Home</a>
+        <a href="airports.html">Airport Transfers</a>
+        <a href="stations.html">Train Stations</a>
+        <a href="ports.html">Cruise Ports</a>
+        <a href="business-accounts.html">Business Accounts</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </details>
   </div>
-
-  <nav id="p23-mobile-nav" class="p23-mobile-nav" hidden aria-label="Mobile menu">
-    <a href="index.html">Home</a>
-    <a href="airports.html">Airport Transfers</a>
-    <a href="stations.html">Train Stations</a>
-    <a href="ports.html">Cruise Ports</a>
-    <a href="business-accounts.html">Business Accounts</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 </header>
 
 <main id="main">
@@ -198,64 +200,11 @@
   <div class="p23-wrap p23-footer-bottom">© 2026 North Cornwall Airport Transfers. All rights reserved.</div>
 </footer>
 
-<script src="site-config.js?v=26"></script>
-<script src="app.js?v=26"></script>
+<script src="site-config.js?v=27"></script>
+<script src="app.js?v=27"></script>
 
 
-<script>
-(function () {
-  function setupMenu() {
-    var button = document.querySelector('.p23-menu');
-    var menu = document.getElementById('p23-mobile-nav');
 
-    if (!button || !menu) return;
-
-    function setOpen(open) {
-      button.setAttribute('aria-expanded', open ? 'true' : 'false');
-      menu.hidden = !open;
-      document.body.classList.toggle('p23-menu-open', open);
-    }
-
-    button.onclick = function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-      setOpen(button.getAttribute('aria-expanded') !== 'true');
-    };
-
-    menu.querySelectorAll('a').forEach(function (link) {
-      link.onclick = function () {
-        setOpen(false);
-      };
-    });
-
-    document.addEventListener('click', function (event) {
-      if (
-        button.getAttribute('aria-expanded') === 'true' &&
-        !menu.contains(event.target) &&
-        !button.contains(event.target)
-      ) {
-        setOpen(false);
-      }
-    });
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') setOpen(false);
-    });
-
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 850) setOpen(false);
-    });
-
-    setOpen(false);
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupMenu);
-  } else {
-    setupMenu();
-  }
-})();
-</script>
 
 </body>
 </html>
