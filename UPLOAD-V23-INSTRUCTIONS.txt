@@ -1,0 +1,25 @@
+V23 EXACT PREMIUM HOMEPAGE
+
+This is a clean homepage replacement, not another patch over the old design.
+
+Changes:
+- Correct photographic airport hero
+- Correct compact premium header
+- No cartoon airport illustration
+- No overlapping quote card on mobile
+- No bottom sticky buttons covering the form
+- Desktop phone preview only
+- Mobile design stacks cleanly like the approved reference
+- Premium navy, powder-blue and gold styling
+- Quote form, destination cards, business accounts and footer retained
+
+UPLOAD:
+1. Extract this ZIP.
+2. Open Documents > GitHub > northcornwallairporttransfers-v2
+3. Delete the existing contents of that repository folder, but do not delete the folder itself.
+4. Copy everything inside this extracted V23 folder into it.
+5. In GitHub Desktop commit:
+   Upload V23 exact premium homepage
+6. Click Push origin.
+7. Wait for the Cloudflare deployment.
+8. Check in a private/incognito tab.

@@ -147,18 +147,6 @@
   });
 
   if('serviceWorker' in navigator){
-    window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js?v=22').catch(()=>{}));
+    window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js?v=23').catch(()=>{}));
   }
 })();
-
-document.addEventListener("DOMContentLoaded", () => {
-  const button = document.querySelector(".premium-menu-button");
-  const nav = document.querySelector(".premium-mobile-nav");
-  if (button && nav) {
-    button.addEventListener("click", () => {
-      const isOpen = button.getAttribute("aria-expanded") === "true";
-      button.setAttribute("aria-expanded", String(!isOpen));
-      nav.hidden = isOpen;
-    });
-  }
-});
