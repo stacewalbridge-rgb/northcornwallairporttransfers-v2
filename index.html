@@ -11,7 +11,7 @@
   <link rel="icon" href="assets/favicon.svg">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" as="image" href="assets/hero-reference.webp">
-  <link rel="stylesheet" href="styles.css?v=25">
+  <link rel="stylesheet" href="styles.css?v=26">
 </head>
 <body class="p23-body">
 <a class="skip" href="#main">Skip to content</a>
@@ -198,45 +198,64 @@
   <div class="p23-wrap p23-footer-bottom">© 2026 North Cornwall Airport Transfers. All rights reserved.</div>
 </footer>
 
-<script src="site-config.js?v=25"></script>
-<script src="app.js?v=25"></script>
+<script src="site-config.js?v=26"></script>
+<script src="app.js?v=26"></script>
+
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const button = document.querySelector('.p23-menu');
-  const nav = document.querySelector('.p23-mobile-nav');
+(function () {
+  function setupMenu() {
+    var button = document.querySelector('.p23-menu');
+    var menu = document.getElementById('p23-mobile-nav');
 
-  if (!button || !nav) return;
+    if (!button || !menu) return;
 
-  function closeMenu() {
-    button.setAttribute('aria-expanded', 'false');
-    nav.hidden = true;
+    function setOpen(open) {
+      button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menu.hidden = !open;
+      document.body.classList.toggle('p23-menu-open', open);
+    }
+
+    button.onclick = function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      setOpen(button.getAttribute('aria-expanded') !== 'true');
+    };
+
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.onclick = function () {
+        setOpen(false);
+      };
+    });
+
+    document.addEventListener('click', function (event) {
+      if (
+        button.getAttribute('aria-expanded') === 'true' &&
+        !menu.contains(event.target) &&
+        !button.contains(event.target)
+      ) {
+        setOpen(false);
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') setOpen(false);
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 850) setOpen(false);
+    });
+
+    setOpen(false);
   }
 
-  function openMenu() {
-    button.setAttribute('aria-expanded', 'true');
-    nav.hidden = false;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMenu);
+  } else {
+    setupMenu();
   }
-
-  button.addEventListener('click', function () {
-    const isOpen = button.getAttribute('aria-expanded') === 'true';
-    if (isOpen) closeMenu();
-    else openMenu();
-  });
-
-  nav.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', closeMenu);
-  });
-
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') closeMenu();
-  });
-
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 850) closeMenu();
-  });
-
-  closeMenu();
-});
+})();
 </script>
+
 </body>
 </html>

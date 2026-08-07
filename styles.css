@@ -2762,3 +2762,53 @@ main > .section:has(.feature-image){
     transform:translateY(0);
   }
 }
+
+
+/* =========================================================
+   V26 — DEFINITIVE MOBILE MENU TOGGLE
+   ========================================================= */
+
+#p23-mobile-nav {
+  display: none;
+}
+
+#p23-mobile-nav[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 850px) {
+  #p23-mobile-nav:not([hidden]) {
+    display: grid !important;
+  }
+
+  .p23-menu {
+    cursor: pointer;
+    position: relative;
+    z-index: 1002;
+    touch-action: manipulation;
+  }
+
+  .p23-menu[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .p23-menu[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .p23-menu[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .p23-menu span {
+    transition: transform .18s ease, opacity .18s ease;
+  }
+
+  .p23-mobile-nav {
+    position: relative;
+    z-index: 1001;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+    box-shadow: 0 12px 25px rgba(8,41,67,.12);
+  }
+}

@@ -1,0 +1,21 @@
+V26 WORKING MOBILE MENU
+
+The menu now:
+- Opens with one tap
+- Closes with the next tap
+- Changes the three lines into an X when open
+- Closes when a menu link is selected
+- Closes when tapping outside it
+- Closes with Escape
+- Resets at desktop width
+
+UPLOAD:
+1. Extract this ZIP.
+2. Open Documents > GitHub > northcornwallairporttransfers-v2
+3. Delete the existing contents of the repository folder.
+4. Copy everything inside this V26 folder into it.
+5. Commit:
+   Upload V26 working mobile menu
+6. Push origin.
+7. Wait for Cloudflare deployment.
+8. Test in a private/incognito tab.
