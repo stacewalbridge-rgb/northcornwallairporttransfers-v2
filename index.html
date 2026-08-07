@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>North Cornwall Airport Transfers | Premium Airport, Rail & Long-Distance Travel</title>
-  <meta name="description" content="Premium pre-booked airport, station, cruise-port and long-distance transfers from North Cornwall. Request a personalised quote by WhatsApp, email or telephone.">
+  <title>North Cornwall Airport Transfers | Private Airport &amp; Long-Distance Travel</title>
+  <meta name="description" content="Pre-booked private airport, rail, cruise-port and long-distance transfers from North Cornwall. Request a personalised quote by WhatsApp, email or text.">
   <meta name="theme-color" content="#082943">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://northcornwallairporttransfers.co.uk/">
   <link rel="icon" href="assets/favicon.svg">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" as="image" href="assets/hero-reference.webp">
-  <link rel="stylesheet" href="styles.css?v=30">
+  <link rel="stylesheet" href="styles.css?v=launch1">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://northcornwallairporttransfers.co.uk/#website","url":"https://northcornwallairporttransfers.co.uk/","name":"North Cornwall Airport Transfers","alternateName":"NC Airport Transfers","inLanguage":"en-GB"},{"@type":"Organization","@id":"https://northcornwallairporttransfers.co.uk/#organization","name":"North Cornwall Airport Transfers","url":"https://northcornwallairporttransfers.co.uk/","email":"info@northcornwallairporttransfers.co.uk","telephone":"+447356070904","logo":"https://northcornwallairporttransfers.co.uk/assets/brand-logo.webp","areaServed":[{"@type":"AdministrativeArea","name":"Cornwall"},{"@type":"AdministrativeArea","name":"Devon"},{"@type":"Country","name":"United Kingdom"}],"contactPoint":{"@type":"ContactPoint","telephone":"+447356070904","contactType":"customer service","email":"info@northcornwallairporttransfers.co.uk","areaServed":"GB","availableLanguage":"English"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I book an airport transfer in advance?","acceptedAnswer":{"@type":"Answer","text":"Yes. Journeys are pre-booked so collection details, passenger numbers, luggage and timings can be agreed before travel."}},{"@type":"Question","name":"What happens if my flight is delayed?","acceptedAnswer":{"@type":"Answer","text":"Provide your flight details when requesting a quote so arrival timings can be considered when your booking is confirmed."}},{"@type":"Question","name":"Can I arrange a return journey?","acceptedAnswer":{"@type":"Answer","text":"Yes. Include both outbound and return details in your quotation request and they can be considered together."}},{"@type":"Question","name":"Do you take groups with luggage?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tell us the number of passengers and the amount of luggage so a suitable vehicle can be discussed."}},{"@type":"Question","name":"Can businesses arrange regular travel?","acceptedAnswer":{"@type":"Answer","text":"Yes. Business clients are welcome and regular or one-off arrangements can be discussed."}},{"@type":"Question","name":"How can I request a quotation?","acceptedAnswer":{"@type":"Answer","text":"Use the homepage form to send your journey by WhatsApp, email or text message."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://northcornwallairporttransfers.co.uk/#organization","name":"North Cornwall Airport Transfers","url":"https://northcornwallairporttransfers.co.uk/","email":"info@northcornwallairporttransfers.co.uk","telephone":"+447356070904","parentOrganization":{"@type":"Organization","name":"Robs Travel Group","url":"https://robs-travel.co.uk/"}}</script>
 </head>
 <body class="p23-body">
 <a class="skip" href="#main">Skip to content</a>
@@ -34,7 +37,7 @@
     </details>
     <a class="p23-brand" href="index.html" aria-label="North Cornwall Airport Transfers home">
       <img src="assets/brand-logo.webp" alt="">
-      <span><strong>North Cornwall</strong><em>Airport Transfers</em></span>
+      <span><strong>North Cornwall</strong><em>Airport Transfers</em></span><span class="robs-service-tag">Part of the Robs Travel Group</span>
     </a>
 
     <nav class="p23-desktop-nav" aria-label="Main menu">
@@ -72,7 +75,7 @@
         <div class="p23-hero-actions">
           <a class="p23-btn p23-btn-dark" href="#quote">Get a quote</a>
           <a class="p23-btn p23-btn-light" data-phone-link href="#">Call now</a>
-        </div>
+        <a class="p23-btn p23-btn-gold robs-book-btn" href="https://robs-travel.co.uk/" data-robs-booking>Book / Quote</a></div>
       </div>
     </div>
   </section>
@@ -80,7 +83,134 @@
     </div>
   </section>
 
-  <section id="quote" class="p23-quote-section">
+  
+<section class="price-engine-section" id="instant-price">
+  <div class="p23-wrap">
+    <div class="price-engine-card">
+      <div class="price-engine-heading">
+        <div>
+          <span class="p23-eyebrow">Instant airport price</span>
+          <h2>Check your fixed fare</h2>
+          <p>Enter your pickup postcode, choose an airport and vehicle, and we’ll calculate the applicable Bude-area pricing zone.</p>
+        </div>
+        <span class="price-engine-note">Straight-line distance from central Bude</span>
+      </div>
+
+      <div class="price-engine-grid">
+        <label>Pickup postcode
+          <input id="price-postcode" type="text" inputmode="text" autocomplete="postal-code" placeholder="e.g. EX23 8LG">
+        </label>
+
+        <label>Airport
+          <select id="price-airport">
+            <option value="">Select airport</option>
+            <option value="heathrow">Heathrow Airport</option>
+            <option value="gatwick">Gatwick Airport</option>
+            <option value="bristol">Bristol Airport</option>
+            <option value="exeter">Exeter Airport</option>
+            <option value="newquay">Newquay Airport</option>
+            <option value="birmingham">Birmingham Airport</option>
+            <option value="manchester">Manchester Airport</option>
+          </select>
+        </label>
+
+        <label>Vehicle
+          <select id="price-vehicle">
+            <option value="">Select vehicle</option>
+            <option value="standard">Standard car — up to 4 passengers</option>
+            <option value="mpv">MPV — up to 6 passengers</option>
+            <option value="eight">8-seater — up to 8 passengers</option>
+            <option value="executive">Executive vehicle — up to 3 passengers</option>
+          </select>
+        </label>
+
+        <label>Passengers
+          <select id="price-passengers">
+            <option value="">Select passengers</option>
+            <option value="1">1 passenger</option>
+            <option value="2">2 passengers</option>
+            <option value="3">3 passengers</option>
+            <option value="4">4 passengers</option>
+            <option value="5">5 passengers</option>
+            <option value="6">6 passengers</option>
+            <option value="7">7 passengers</option>
+            <option value="8">8 passengers</option>
+          </select>
+        </label>
+
+        <label>Luggage / large cases
+          <select id="price-luggage">
+            <option value="">Select luggage</option>
+            <option value="0">No luggage / 0 large cases</option>
+            <option value="1">1 large case</option>
+            <option value="2">2 large cases</option>
+            <option value="3">3 large cases</option>
+            <option value="4">4 large cases</option>
+            <option value="5">5 large cases</option>
+            <option value="6">6 large cases</option>
+            <option value="7">7 large cases</option>
+            <option value="8">8+ large cases</option>
+          </select>
+        </label>
+
+        <label class="zero-luggage-confirm" id="zero-luggage-confirm" hidden>
+          <span class="checkbox-line">
+            <input id="confirm-no-luggage" type="checkbox">
+            <span>I confirm there is no luggage to be carried.</span>
+          </span>
+          <small>Please only select zero luggage if nothing needs to be carried. Vehicle suitability can depend on luggage as well as passenger numbers.</small>
+        </label>
+
+        <button type="button" id="calculate-fixed-price" class="p23-btn p23-btn-dark price-calc-btn">Check price</button>
+      </div>
+
+      <div id="price-engine-status" class="price-engine-status" aria-live="polite"></div>
+
+      <div id="price-result" class="price-result" hidden>
+        <div class="price-result-main">
+          <span class="price-result-label">Your fixed fare</span>
+          <strong id="price-result-amount">£0</strong>
+          <p id="price-result-summary"></p>
+        </div>
+        <div class="price-result-actions">
+          <button type="button" class="p23-btn p23-whatsapp price-send" data-price-send="whatsapp">Send by WhatsApp</button>
+          <button type="button" class="p23-btn p23-email price-send" data-price-send="email">Send by email</button>
+          <button type="button" class="p23-btn p23-text price-send" data-price-send="sms">Send by text</button>
+        </div>
+      </div>
+
+      <div id="executive-result" class="executive-result" hidden>
+        <span class="price-result-label">Executive vehicle</span>
+        <h3>Price confirmed personally</h3>
+        <p>Executive bookings are quoted individually. Please send the full journey details, including passenger numbers and luggage, so we can confirm that the vehicle is suitable and provide your price.</p>
+        <div class="price-result-actions">
+          <button type="button" class="p23-btn p23-whatsapp price-send" data-price-send="whatsapp">Request by WhatsApp</button>
+          <button type="button" class="p23-btn p23-email price-send" data-price-send="email">Request by email</button>
+          <button type="button" class="p23-btn p23-text price-send" data-price-send="sms">Request by text</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="robs-booking-handoff">
+  <div class="p23-wrap">
+    <div class="robs-booking-card">
+      <div>
+        <span class="p23-eyebrow">Ready to book?</span>
+        <h2>Continue securely with Robs Travel</h2>
+        <p>North Cornwall Airport Transfers is part of the Robs Travel Group. Robs Travel provides the established transport operation behind this specialist service. Once you are ready to make a booking, continue to the Robs Travel booking and quotation system to send the full journey details.</p>
+      </div>
+      <div class="robs-booking-actions">
+        <a class="p23-btn p23-btn-dark" href="https://robs-travel.co.uk/" data-robs-booking>Open booking / quotation system</a>
+        <a class="p23-btn p23-btn-light" href="tel:+447356070904">Call 07356 070904</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quote" class="p23-quote-section">
     <div class="p23-wrap">
       <form id="quote-form" class="p23-quote-card">
         <div class="p23-quote-head">
@@ -118,6 +248,7 @@
           <button type="button" class="p23-btn p23-email" data-quote-action="email">Get quote by email</button>
           <button type="button" class="p23-btn p23-text" data-quote-action="sms">Get quote by text message</button>
         </div>
+        <a class="p23-btn p23-btn-gold robs-full-booking" href="https://robs-travel.co.uk/" data-robs-booking>Continue to Robs Travel booking</a>
         <p class="form-status" aria-live="polite"></p>
       </form>
     </div>
@@ -184,9 +315,43 @@
   </section>
 </main>
 
+
+<section class="seo-faq-section">
+  <div class="p23-wrap">
+    <span class="p23-eyebrow">Useful information</span>
+    <h2>Airport transfer questions</h2>
+    <div class="seo-faq-grid">
+      <details><summary>Can I book an airport transfer in advance?</summary><p>Yes. Journeys are pre-booked so collection details, passenger numbers, luggage and timings can be agreed before travel.</p></details>
+      <details><summary>What happens if my flight is delayed?</summary><p>Provide your flight details when requesting a quote so arrival timings can be considered when your booking is confirmed.</p></details>
+      <details><summary>Can I arrange a return journey?</summary><p>Yes. Include both outbound and return details in your quotation request and they can be considered together.</p></details>
+      <details><summary>Do you take groups with luggage?</summary><p>Yes. Tell us the number of passengers and the amount of luggage so a suitable vehicle can be discussed.</p></details>
+      <details><summary>Can businesses arrange regular travel?</summary><p>Yes. Business clients are welcome and regular or one-off arrangements can be discussed.</p></details>
+      <details><summary>How can I request a quotation?</summary><p>Use the homepage form to send your journey by WhatsApp, email or text message.</p></details>
+    </div>
+  </div>
+</section>
+<section class="seo-pickups" id="locations">
+  <div class="p23-wrap">
+    <span class="p23-eyebrow">Popular collection locations</span>
+    <h2>Private airport transfers from towns across North Cornwall</h2>
+    <div class="seo-location-links">
+      <a href="locations/bude-airport-transfers.html">From Bude</a>
+      <a href="locations/padstow-airport-transfers.html">From Padstow</a>
+      <a href="locations/wadebridge-airport-transfers.html">From Wadebridge</a>
+      <a href="locations/port-isaac-airport-transfers.html">From Port Isaac</a>
+      <a href="locations/tintagel-airport-transfers.html">From Tintagel</a>
+      <a href="locations/boscastle-airport-transfers.html">From Boscastle</a>
+      <a href="locations/camelford-airport-transfers.html">From Camelford</a>
+      <a href="locations/bodmin-airport-transfers.html">From Bodmin</a>
+      <a href="locations/launceston-airport-transfers.html">From Launceston</a>
+      <a href="locations/holsworthy-airport-transfers.html">From Holsworthy</a>
+    </div>
+  </div>
+</section>
+
 <footer class="p23-footer">
   <div class="p23-wrap p23-footer-grid">
-    <div class="p23-footer-brand">
+    <div class="p23-footer-brand"><p class="robs-footer-relation"><strong>North Cornwall Airport Transfers</strong><br>Part of the Robs Travel Group</p>
       <a class="p23-brand" href="index.html"><img src="assets/brand-logo.webp" alt=""><span><strong>North Cornwall</strong><em>Airport Transfers</em></span></a>
       <p>Premium airport, rail, cruise-port and long-distance transfers arranged personally.</p>
       <a data-phone-link href="#">07356 070904</a>
@@ -199,8 +364,10 @@
   <div class="p23-wrap p23-footer-bottom">© 2026 North Cornwall Airport Transfers. All rights reserved.</div>
 </footer>
 
-<script src="site-config.js?v=30"></script>
-<script src="app.js?v=30"></script>
+<script src="site-config.js?v=launch1"></script>
+<script src="app.js?v=launch1"></script>
 
+<script src="pricing-engine.js?v=launch1"></script>
+<script src="booking-integration.js?v=launch1"></script>
 </body>
 </html>

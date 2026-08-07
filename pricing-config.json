@@ -1,0 +1,105 @@
+{
+  "budeCentre": {
+    "lat": 50.8289,
+    "lng": -4.5469,
+    "label": "Bude town centre"
+  },
+  "bands": [
+    {
+      "maxMiles": 5,
+      "surcharge": 0,
+      "label": "Bude + 5 miles"
+    },
+    {
+      "maxMiles": 10,
+      "surcharge": 20,
+      "label": "Up to 10 miles"
+    },
+    {
+      "maxMiles": 15,
+      "surcharge": 30,
+      "label": "Up to 15 miles"
+    },
+    {
+      "maxMiles": 20,
+      "surcharge": 40,
+      "label": "Up to 20 miles"
+    },
+    {
+      "maxMiles": 25,
+      "surcharge": 50,
+      "label": "Up to 25 miles"
+    },
+    {
+      "maxMiles": 30,
+      "surcharge": 55,
+      "label": "Up to 30 miles"
+    },
+    {
+      "maxMiles": 40,
+      "surcharge": 60,
+      "label": "Up to 40 miles"
+    },
+    {
+      "maxMiles": 50,
+      "surcharge": 70,
+      "label": "Up to 50 miles"
+    }
+  ],
+  "airports": {
+    "heathrow": {
+      "label": "Heathrow Airport",
+      "standard": 400,
+      "mpv": 460,
+      "eight": 550
+    },
+    "gatwick": {
+      "label": "Gatwick Airport",
+      "standard": 450,
+      "mpv": 500,
+      "eight": 600
+    },
+    "bristol": {
+      "label": "Bristol Airport",
+      "standard": 240,
+      "mpv": 290,
+      "eight": 340
+    },
+    "exeter": {
+      "label": "Exeter Airport",
+      "standard": 150,
+      "mpv": 170,
+      "eight": 190
+    },
+    "newquay": {
+      "label": "Newquay Airport",
+      "standard": 90,
+      "mpv": 110,
+      "eight": 120
+    },
+    "birmingham": {
+      "label": "Birmingham Airport",
+      "standard": 380,
+      "mpv": 420,
+      "eight": 490
+    },
+    "manchester": {
+      "label": "Manchester Airport",
+      "standard": 500,
+      "mpv": 570,
+      "eight": 660
+    }
+  },
+  "vehicleMaxPassengers": {
+    "standard": 4,
+    "mpv": 6,
+    "eight": 8,
+    "executive": 3
+  },
+  "business": {
+    "phoneInternational": "447356070904",
+    "email": "info@northcornwallairporttransfers.co.uk"
+  },
+  "distanceMethod": "straight-line",
+  "postcodeLookup": "https://api.postcodes.io/postcodes/"
+}

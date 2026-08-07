@@ -1,0 +1,33 @@
+NORTH CORNWALL AIRPORT TRANSFERS — GOOGLE SEO NEXT STEPS
+
+THIS BUILD ADDS
+- Stronger homepage title and meta description
+- WebSite and Organization structured data
+- Visible FAQ section plus FAQ structured data
+- 12 useful collection-location landing pages
+- No fake airports: Tintagel is explicitly "Airport transfers FROM Tintagel"
+- Better titles/descriptions for Heathrow, Gatwick, Bristol, Exeter and Newquay
+- Service structured data on key airport and location pages
+- Internal linking between location pages and airport pages
+- Fresh XML sitemap
+- robots.txt pointing Google to the sitemap
+- No invented reviews, star ratings or physical address
+
+AFTER UPLOAD
+1. Open Google Search Console.
+2. Add/confirm: https://northcornwallairporttransfers.co.uk/
+3. Submit: https://northcornwallairporttransfers.co.uk/sitemap.xml
+4. Use URL Inspection on the homepage and request indexing.
+5. Request indexing for:
+   /airports.html
+   /locations/bude-airport-transfers.html
+   /locations/padstow-airport-transfers.html
+   /locations/wadebridge-airport-transfers.html
+6. Complete Google Business Profile video verification.
+7. Once verified, keep the business name, phone and website exactly consistent.
+8. Add genuine business/vehicle photos and collect genuine customer reviews.
+
+IMPORTANT
+No one can guarantee first place in Google. This build improves relevance, crawlability,
+internal linking and structured information. Rankings also depend on competition,
+reputation, links, reviews and Google's systems.

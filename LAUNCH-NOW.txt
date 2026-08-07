@@ -1,0 +1,33 @@
+NORTH CORNWALL AIRPORT TRANSFERS — LAUNCH READY
+
+FINAL BRANDING
+North Cornwall Airport Transfers
+Part of the Robs Travel Group
+
+THIS RELEASE KEEPS
+- Premium responsive design
+- Working mobile navigation
+- WhatsApp / email / text quotation actions
+- Instant postcode airport pricing
+- Robs Travel booking-system handoff
+- SEO/location pages
+- Google structured data
+- Sitemap / robots
+- Business accounts
+
+UPLOAD
+1. Extract this ZIP.
+2. Open Documents > GitHub > northcornwallairporttransfers-v2
+3. Delete the existing website files INSIDE that repository folder.
+4. Copy everything from this extracted folder into it.
+5. GitHub Desktop commit:
+   Launch: Part of the Robs Travel Group
+6. Click Push origin.
+7. Wait for Cloudflare deployment.
+8. Check the live site in a private/incognito window.
+
+SECOND DOMAIN
+Set northcornwalltransfers.co.uk to 301 redirect to:
+https://northcornwallairporttransfers.co.uk/
+
+See DOMAIN-AND-ROBS-INTEGRATION.txt for the Cloudflare redirect steps.

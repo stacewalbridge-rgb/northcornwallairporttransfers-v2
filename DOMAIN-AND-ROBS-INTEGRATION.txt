@@ -1,0 +1,48 @@
+NORTH CORNWALL AIRPORT TRANSFERS — FINAL INTEGRATION NOTES
+
+PRIMARY WEBSITE
+https://northcornwallairporttransfers.co.uk/
+
+SECOND DOMAIN
+https://northcornwalltransfers.co.uk/
+
+RECOMMENDED DOMAIN SETUP
+Do NOT run both domains as separate copies of the website.
+Keep northcornwallairporttransfers.co.uk as the canonical/primary domain.
+301 redirect northcornwalltransfers.co.uk to:
+https://northcornwallairporttransfers.co.uk/$1
+
+CLOUDFLARE
+1. Add northcornwalltransfers.co.uk to Cloudflare if it is not already there.
+2. Make sure its DNS is active on Cloudflare.
+3. Go to Rules > Redirect Rules.
+4. Create a Single Redirect.
+5. Match hostname:
+   northcornwalltransfers.co.uk
+6. Redirect dynamically to the same path on:
+   https://northcornwallairporttransfers.co.uk
+7. Use status code 301.
+8. Preserve query strings.
+
+This prevents Google treating the two domains as duplicate websites.
+
+ROBS TRAVEL INTEGRATION
+North Cornwall Airport Transfers now displays:
+"Part of the Robs Travel Group"
+
+The booking hand-off currently points to:
+https://robs-travel.co.uk/
+
+If Robs Travel later gets a dedicated booking URL such as:
+https://robs-travel.co.uk/book/
+or:
+https://app.robs-travel.co.uk/
+
+you only need to edit:
+booking-integration.js
+
+Change the bookingUrl value and every Robs booking button on the homepage updates.
+
+IMPORTANT
+The existing NCAT WhatsApp / Email / Text quotation options have NOT been removed.
+The Robs Travel button is the hand-off for the fuller booking/quotation system.

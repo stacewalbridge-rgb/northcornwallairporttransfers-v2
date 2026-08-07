@@ -1,0 +1,26 @@
+UPLOAD THIS RELEASE TO NORTH CORNWALL AIRPORT TRANSFERS
+
+1. Extract this ZIP.
+2. Open:
+   Documents > GitHub > northcornwallairporttransfers-v2
+3. Delete the existing website files inside that repository folder.
+4. Copy EVERYTHING from this extracted folder into the repository folder.
+5. Open GitHub Desktop.
+6. Confirm the repository is northcornwallairporttransfers-v2.
+7. Commit:
+   Integrate Robs Travel booking system
+8. Click Push origin.
+9. Wait for Cloudflare deployment.
+10. Open https://northcornwallairporttransfers.co.uk/ in a private/incognito window.
+
+CHECK
+- Instant postcode pricing
+- WhatsApp quote
+- Email quote
+- Text quote
+- Book / Quote button opens Robs Travel
+- Mobile hamburger menu
+- Airport/location pages
+
+Then configure the 301 redirect for northcornwalltransfers.co.uk using
+DOMAIN-AND-ROBS-INTEGRATION.txt.
