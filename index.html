@@ -11,7 +11,7 @@
   <link rel="icon" href="assets/favicon.svg">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" as="image" href="assets/hero-reference.webp">
-  <link rel="stylesheet" href="styles.css?v=28">
+  <link rel="stylesheet" href="styles.css?v=29">
 </head>
 <body class="p23-body">
 <a class="skip" href="#main">Skip to content</a>
@@ -103,7 +103,6 @@
               <option>5</option><option>6</option><option>7</option><option>8+</option>
             </select>
           </label>
-          <button type="button" class="p23-btn p23-btn-dark p23-get-quote" data-send-method="whatsapp">Get quote</button>
 
           <label class="p23-extra">Name<input name="name" required></label>
           <label class="p23-extra">Telephone<input name="phone" required></label>
@@ -114,10 +113,10 @@
           <label class="p23-extra p23-full">Journey details<textarea name="details" placeholder="Flight number, return journey or special requirements"></textarea></label>
         </div>
 
-        <div class="p23-send-options">
-          <button type="button" class="p23-btn p23-whatsapp" data-send-method="whatsapp">WhatsApp quote</button>
-          <button type="button" class="p23-btn p23-email" data-send-method="email">Email quote</button>
-          <button type="button" class="p23-btn p23-text" data-send-method="sms">Text quote</button>
+        <div class="p23-send-options p29-send-options">
+          <button type="button" class="p23-btn p23-whatsapp" data-quote-action="whatsapp">Get quote by WhatsApp</button>
+          <button type="button" class="p23-btn p23-email" data-quote-action="email">Get quote by email</button>
+          <button type="button" class="p23-btn p23-text" data-quote-action="sms">Get quote by text message</button>
         </div>
         <p class="form-status" aria-live="polite"></p>
       </form>
@@ -200,8 +199,8 @@
   <div class="p23-wrap p23-footer-bottom">© 2026 North Cornwall Airport Transfers. All rights reserved.</div>
 </footer>
 
-<script src="site-config.js?v=28"></script>
-<script src="app.js?v=28"></script>
+<script src="site-config.js?v=29"></script>
+<script src="app.js?v=29"></script>
 
 
 
@@ -228,6 +227,100 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.innerWidth > 850 && menu.open) {
       menu.removeAttribute('open');
     }
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('quote-form');
+  if (!form) return;
+
+  const businessPhoneDisplay = '07356 070904';
+  const businessPhoneInternational = '447356070904';
+  const businessEmail = 'info@northcornwallairporttransfers.co.uk';
+
+  function value(name) {
+    const el = form.elements[name];
+    return el ? String(el.value || '').trim() : '';
+  }
+
+  function buildMessage() {
+    const lines = [
+      'Hello North Cornwall Airport Transfers,',
+      '',
+      'I would like a transfer quote.',
+      '',
+      'Pickup: ' + (value('pickup') || 'Not entered'),
+      'Destination: ' + (value('destination') || 'Not entered'),
+      'Date: ' + (value('date') || 'Not entered'),
+      'Time: ' + (value('time') || 'Not entered'),
+      'Passengers: ' + (value('passengers') || 'Not entered'),
+      'Large cases: ' + (value('luggage') || 'Not entered')
+    ];
+
+    if (value('name')) lines.push('Name: ' + value('name'));
+    if (value('phone')) lines.push('Telephone: ' + value('phone'));
+    if (value('email')) lines.push('Email: ' + value('email'));
+    if (value('details')) lines.push('Details: ' + value('details'));
+
+    lines.push('', 'Please let me know the price and availability. Thank you.');
+    return lines.join('\n');
+  }
+
+  function validateJourney() {
+    const required = ['pickup', 'destination', 'date', 'time'];
+    const missing = required.filter(function (name) {
+      return !value(name);
+    });
+
+    const status = form.querySelector('.form-status');
+
+    if (missing.length) {
+      if (status) {
+        status.textContent = 'Please enter your pickup, destination, date and time first.';
+      }
+      const first = form.elements[missing[0]];
+      if (first) first.focus();
+      return false;
+    }
+
+    if (status) status.textContent = '';
+    return true;
+  }
+
+  form.querySelectorAll('[data-quote-action]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      if (!validateJourney()) return;
+
+      const message = buildMessage();
+      const action = button.getAttribute('data-quote-action');
+
+      if (action === 'whatsapp') {
+        window.location.href =
+          'https://wa.me/' + businessPhoneInternational +
+          '?text=' + encodeURIComponent(message);
+        return;
+      }
+
+      if (action === 'email') {
+        const subject = 'Transfer quote request';
+        window.location.href =
+          'mailto:' + businessEmail +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(message);
+        return;
+      }
+
+      if (action === 'sms') {
+        const smsBody = encodeURIComponent(message);
+        const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        const separator = isiOS ? '&' : '?';
+        window.location.href =
+          'sms:+' + businessPhoneInternational + separator + 'body=' + smsBody;
+      }
+    });
   });
 });
 </script>

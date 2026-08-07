@@ -3101,3 +3101,33 @@ main > .section:has(.feature-image){
     display:none !important;
   }
 }
+
+
+/* =========================================================
+   V29 — WORKING QUOTE ACTION BUTTONS
+   ========================================================= */
+
+.p29-send-options{
+  margin-top:18px;
+}
+
+.p29-send-options .p23-btn{
+  min-height:52px;
+  font-size:.74rem;
+  line-height:1.2;
+  padding:10px 16px;
+}
+
+@media(max-width:560px){
+  .p29-send-options{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .p29-send-options .p23-btn{
+    width:100%;
+    min-height:58px;
+    font-size:.8rem;
+  }
+}

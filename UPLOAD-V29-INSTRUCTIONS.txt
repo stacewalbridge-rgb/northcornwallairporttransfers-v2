@@ -1,0 +1,26 @@
+V29 — WORKING QUOTE LINKS
+
+Changes:
+- Removed the separate GET QUOTE button.
+- Leaves exactly three quote choices:
+  1. Get quote by WhatsApp
+  2. Get quote by email
+  3. Get quote by text message
+- WhatsApp opens the customer's WhatsApp with journey details filled in.
+- Email opens the customer's email provider/app addressed to:
+  info@northcornwallairporttransfers.co.uk
+- Text opens the customer's SMS app addressed to:
+  07356 070904
+- Pickup, destination, date and time must be entered first.
+- Passenger and luggage details are included automatically.
+
+UPLOAD:
+1. Extract this ZIP.
+2. Open Documents > GitHub > northcornwallairporttransfers-v2
+3. Delete the contents inside the repository folder.
+4. Copy everything inside this V29 folder into it.
+5. Commit:
+   Upload V29 working quote links
+6. Push origin.
+7. Wait for Cloudflare deployment.
+8. Test all three buttons on a mobile phone.
