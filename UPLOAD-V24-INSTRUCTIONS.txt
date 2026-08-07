@@ -1,0 +1,22 @@
+V24 CLEAN MOBILE FIX
+
+This version:
+- Removes the phone mock-up completely
+- Keeps the real airport photo
+- Gives mobile its own proper layout
+- Stops the quote form overlapping the hero
+- Uses full-width mobile form fields
+- Uses clean mobile destination cards
+- Keeps desktop premium and balanced
+- Removes the phone-shaped image from the page
+
+UPLOAD:
+1. Extract this ZIP.
+2. Open Documents > GitHub > northcornwallairporttransfers-v2
+3. Delete the contents of that repository folder.
+4. Copy everything inside this V24 folder into it.
+5. In GitHub Desktop commit:
+   Upload V24 clean mobile fix
+6. Push origin.
+7. Wait for Cloudflare to deploy.
+8. Test in a private/incognito tab.

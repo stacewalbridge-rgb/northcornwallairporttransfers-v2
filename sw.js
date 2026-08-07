@@ -1,5 +1,5 @@
-const CACHE='ncat-v23-exact-premium-20260807';
-const CORE=['/','/index.html','/styles.css?v=23','/app.js?v=23','/site-config.js?v=23','/assets/hero-reference.webp'];
+const CACHE='ncat-v24-clean-mobile-20260807';
+const CORE=['/','/index.html','/styles.css?v=24','/app.js?v=24','/site-config.js?v=24','/assets/hero-reference.webp'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)))});
 self.addEventListener('activate',e=>{e.waitUntil(Promise.all([
   caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))),
