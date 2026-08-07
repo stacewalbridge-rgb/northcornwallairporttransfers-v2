@@ -1,5 +1,5 @@
-const CACHE='ncat-v21-reference-layout-20260807';
-const CORE=['/','/index.html','/styles.css?v=21','/app.js?v=21','/site-config.js?v=21','/assets/neutral-airport-terminal.svg'];
+const CACHE='ncat-v22-premium-responsive-20260807';
+const CORE=['/','/index.html','/styles.css?v=22','/app.js?v=22','/site-config.js?v=22','/assets/neutral-airport-terminal.svg'];
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)))});
 self.addEventListener('activate',e=>{e.waitUntil(Promise.all([
   caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))),

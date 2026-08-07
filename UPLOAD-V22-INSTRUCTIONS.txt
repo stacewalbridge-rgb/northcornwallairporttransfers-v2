@@ -1,0 +1,27 @@
+NORTH CORNWALL AIRPORT TRANSFERS — V22 PREMIUM RESPONSIVE
+
+This version closely follows the preferred reference design:
+- Premium white navigation bar
+- Large airport hero with left-side headline
+- Strong navy/gold branding
+- Immediate personalised quote panel
+- Desktop mobile-preview mock-up
+- Actual responsive mobile layout
+- Popular destinations cards
+- Trust strip
+- Professional service section
+- Business accounts panel
+- Premium multi-column footer
+
+UPLOAD
+1. Extract this ZIP.
+2. Open Documents > GitHub > northcornwallairporttransfers-v2
+3. Copy everything from the extracted V22 folder into that repository folder.
+4. Replace the existing files.
+5. In GitHub Desktop confirm the repository is northcornwallairporttransfers-v2.
+6. Commit message:
+   Upload V22 premium responsive homepage
+7. Click Commit to main.
+8. Click Push origin.
+9. Cloudflare deploys automatically.
+10. Test the website in a private/incognito browser window.
