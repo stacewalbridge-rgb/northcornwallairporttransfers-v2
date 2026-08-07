@@ -11,13 +11,27 @@
   <link rel="icon" href="assets/favicon.svg">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" as="image" href="assets/hero-reference.webp">
-  <link rel="stylesheet" href="styles.css?v=27">
+  <link rel="stylesheet" href="styles.css?v=28">
 </head>
 <body class="p23-body">
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="p23-header">
   <div class="p23-wrap p23-nav">
+    <details class="p28-menu" id="p28-menu">
+      <summary aria-label="Open navigation menu">
+        <span class="p28-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+      </summary>
+      <nav class="p28-dropdown" aria-label="Mobile menu">
+        <a href="index.html">Home</a>
+        <a href="airports.html">Airport Transfers</a>
+        <a href="stations.html">Train Stations</a>
+        <a href="ports.html">Cruise Ports</a>
+        <a href="business-accounts.html">Business Accounts</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </details>
     <a class="p23-brand" href="index.html" aria-label="North Cornwall Airport Transfers home">
       <img src="assets/brand-logo.webp" alt="">
       <span><strong>North Cornwall</strong><em>Airport Transfers</em></span>
@@ -35,21 +49,7 @@
 
     <a class="p23-phone" data-phone-link href="#"><span>☎</span><b data-phone-display>07356 070904</b></a>
 
-    <details class="p27-menu">
-      <summary aria-label="Open navigation menu">
-        <span class="p27-lines" aria-hidden="true"><i></i><i></i><i></i></span>
-        <b>Menu</b>
-      </summary>
-      <nav class="p27-dropdown" aria-label="Mobile menu">
-        <a href="index.html">Home</a>
-        <a href="airports.html">Airport Transfers</a>
-        <a href="stations.html">Train Stations</a>
-        <a href="ports.html">Cruise Ports</a>
-        <a href="business-accounts.html">Business Accounts</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </details>
+    
   </div>
 </header>
 
@@ -200,11 +200,37 @@
   <div class="p23-wrap p23-footer-bottom">© 2026 North Cornwall Airport Transfers. All rights reserved.</div>
 </footer>
 
-<script src="site-config.js?v=27"></script>
-<script src="app.js?v=27"></script>
+<script src="site-config.js?v=28"></script>
+<script src="app.js?v=28"></script>
 
 
 
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var menu = document.getElementById('p28-menu');
+  if (!menu) return;
+
+  document.addEventListener('click', function (event) {
+    if (menu.open && !menu.contains(event.target)) {
+      menu.removeAttribute('open');
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && menu.open) {
+      menu.removeAttribute('open');
+    }
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 850 && menu.open) {
+      menu.removeAttribute('open');
+    }
+  });
+});
+</script>
 
 </body>
 </html>

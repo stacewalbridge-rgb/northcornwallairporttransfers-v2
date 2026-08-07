@@ -1,0 +1,21 @@
+V28 — LEFT HAMBURGER MOBILE MENU
+
+Mobile behaviour:
+- Three small horizontal lines at the top-left.
+- Tap once: menu drops down.
+- Tap again: menu closes.
+- Tap outside the menu: menu closes.
+- Press Escape: menu closes.
+- Hamburger turns into an X while open.
+- Desktop navigation remains unchanged.
+
+UPLOAD:
+1. Extract this ZIP.
+2. Open Documents > GitHub > northcornwallairporttransfers-v2
+3. Delete the contents inside that repository folder.
+4. Copy everything from this extracted V28 folder into it.
+5. In GitHub Desktop commit:
+   Upload V28 left hamburger menu
+6. Push origin.
+7. Wait for Cloudflare to deploy.
+8. Test in a Private/Incognito window.

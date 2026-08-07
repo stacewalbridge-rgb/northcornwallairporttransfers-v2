@@ -2948,3 +2948,156 @@ main > .section:has(.feature-image){
     display:none !important;
   }
 }
+
+
+/* =========================================================
+   V28 — LEFT HAMBURGER MOBILE MENU
+   ========================================================= */
+
+.p28-menu{
+  display:none;
+  position:relative;
+  margin:0;
+}
+
+.p28-menu > summary{
+  list-style:none;
+}
+
+.p28-menu > summary::-webkit-details-marker{
+  display:none;
+}
+
+@media(max-width:850px){
+  /* Hide previous mobile menu controls */
+  .p23-menu,
+  .p23-mobile-nav,
+  #p23-mobile-nav,
+  .p27-menu{
+    display:none !important;
+  }
+
+  .p23-nav{
+    grid-template-columns:auto auto 1fr;
+    gap:12px;
+  }
+
+  .p28-menu{
+    display:block;
+    grid-column:1;
+    justify-self:start;
+    z-index:1200;
+  }
+
+  .p23-brand{
+    grid-column:2;
+  }
+
+  .p28-menu > summary{
+    width:48px;
+    height:46px;
+    display:grid;
+    place-items:center;
+    cursor:pointer;
+    border:1px solid #173b55;
+    border-radius:7px;
+    background:#fff;
+    -webkit-tap-highlight-color:transparent;
+    touch-action:manipulation;
+    box-shadow:0 3px 10px rgba(8,41,67,.06);
+  }
+
+  .p28-lines{
+    position:relative;
+    display:block;
+    width:25px;
+    height:20px;
+  }
+
+  .p28-lines i{
+    position:absolute;
+    left:0;
+    width:25px;
+    height:2px;
+    border-radius:2px;
+    background:#173b55;
+    transition:transform .2s ease, opacity .2s ease, top .2s ease;
+  }
+
+  .p28-lines i:nth-child(1){top:1px}
+  .p28-lines i:nth-child(2){top:9px}
+  .p28-lines i:nth-child(3){top:17px}
+
+  .p28-menu[open] .p28-lines i:nth-child(1){
+    top:9px;
+    transform:rotate(45deg);
+  }
+
+  .p28-menu[open] .p28-lines i:nth-child(2){
+    opacity:0;
+  }
+
+  .p28-menu[open] .p28-lines i:nth-child(3){
+    top:9px;
+    transform:rotate(-45deg);
+  }
+
+  .p28-dropdown{
+    position:absolute;
+    top:55px;
+    left:0;
+    width:min(88vw,360px);
+    padding:10px 16px 12px;
+    border:1px solid #dfe9ef;
+    border-radius:10px;
+    background:#fff;
+    box-shadow:0 18px 48px rgba(8,41,67,.18);
+    overflow:hidden;
+  }
+
+  .p28-dropdown a{
+    display:block;
+    padding:14px 3px;
+    border-bottom:1px solid #edf2f5;
+    color:#0b304c;
+    text-decoration:none;
+    font-size:.98rem;
+    font-weight:800;
+  }
+
+  .p28-dropdown a:last-child{
+    border-bottom:0;
+  }
+}
+
+@media(max-width:560px){
+  .p23-nav{
+    grid-template-columns:auto 1fr;
+    gap:10px;
+  }
+
+  .p28-menu{
+    grid-column:1;
+  }
+
+  .p23-brand{
+    grid-column:2;
+  }
+
+  .p28-menu > summary{
+    width:46px;
+    height:44px;
+  }
+
+  .p28-dropdown{
+    top:53px;
+    left:-2px;
+    width:min(91vw,355px);
+  }
+}
+
+@media(min-width:851px){
+  .p28-menu{
+    display:none !important;
+  }
+}
