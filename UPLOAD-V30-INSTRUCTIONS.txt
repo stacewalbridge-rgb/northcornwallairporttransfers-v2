@@ -1,0 +1,31 @@
+V30 — QUOTE BUTTONS ACTUALLY FIXED
+
+Root cause found:
+The website's Content-Security-Policy permits scripts loaded from app.js,
+but blocks inline JavaScript. The V29 quote-button code was inline, so the
+browser refused to run it.
+
+V30 fixes that properly:
+- Quote logic is now inside app.js, which the security policy allows.
+- Removed the unused separate Get Quote button.
+- Get quote by WhatsApp opens WhatsApp to 07356 070904.
+- Get quote by email opens the customer's email app addressed to:
+  info@northcornwallairporttransfers.co.uk
+- Get quote by text message opens the customer's SMS app to 07356 070904.
+- Journey details are pre-filled in all three.
+- Only pickup, destination, date and time are required.
+- Hidden name/email/telephone fields no longer block submission.
+- Mobile menu outside-click closing code has also been moved into app.js.
+
+UPLOAD:
+1. Extract this ZIP.
+2. Open Documents > GitHub > northcornwallairporttransfers-v2
+3. Delete the contents INSIDE the repository folder.
+4. Copy everything from this V30 folder into it.
+5. Commit:
+   Upload V30 fixed quote actions
+6. Push origin.
+7. Wait for Cloudflare deployment.
+8. Open a Private/Incognito browser window.
+9. Enter pickup, destination, date and time.
+10. Test WhatsApp, Email and Text buttons.

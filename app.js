@@ -51,83 +51,115 @@
     if(panel) panel.hidden=false;
   }));
 
-  const form=document.querySelector('#quote-form');
-  if(form){
-    const date=form.querySelector('input[type="date"]');
-    if(date) date.min=new Date().toISOString().split('T')[0];
 
-    const getValue=(...names)=>{
-      for(const name of names){
-        const field=form.elements[name];
-        if(field && String(field.value||'').trim()) return String(field.value).trim();
+  // V30: quote actions — external script so CSP allows it.
+  const quoteForm=document.getElementById('quote-form');
+  if(quoteForm){
+    const dateField=quoteForm.querySelector('input[type="date"]');
+    if(dateField) dateField.min=new Date().toISOString().split('T')[0];
+
+    const BUSINESS_PHONE_INT='447356070904';
+    const BUSINESS_EMAIL='info@northcornwallairporttransfers.co.uk';
+
+    const qValue=(name)=>{
+      const field=quoteForm.elements[name];
+      return field ? String(field.value||'').trim() : '';
+    };
+
+    const buildQuoteMessage=()=>{
+      const lines=[
+        'Hello North Cornwall Airport Transfers,',
+        '',
+        'I would like a transfer quote.',
+        '',
+        'Pickup: '+(qValue('pickup')||'Not entered'),
+        'Destination: '+(qValue('destination')||'Not entered'),
+        'Date: '+(qValue('date')||'Not entered'),
+        'Time: '+(qValue('time')||'Not entered'),
+        'Passengers: '+(qValue('passengers')||'Not entered'),
+        'Large cases: '+(qValue('luggage')||'Not entered')
+      ];
+
+      if(qValue('name')) lines.push('Name: '+qValue('name'));
+      if(qValue('phone')) lines.push('Telephone: '+qValue('phone'));
+      if(qValue('email')) lines.push('Email: '+qValue('email'));
+      if(qValue('details')) lines.push('Details: '+qValue('details'));
+
+      lines.push('', 'Please let me know the price and availability. Thank you.');
+      return lines.join('\n');
+    };
+
+    const validateQuote=()=>{
+      const needed=['pickup','destination','date','time'];
+      const missing=needed.find(name=>!qValue(name));
+      const status=quoteForm.querySelector('.form-status');
+
+      if(missing){
+        if(status) status.textContent='Please enter your pickup, destination, date and time first.';
+        const field=quoteForm.elements[missing];
+        if(field){
+          field.focus();
+          field.scrollIntoView({behavior:'smooth',block:'center'});
+        }
+        return false;
       }
-      return '';
-    };
 
-    const buildMessage=()=>{
-      const pickup=getValue('pickup','pickup_address');
-      const destination=getValue('destination','airport','dropoff');
-      const dateValue=getValue('date','collection_date');
-      const timeValue=getValue('time','pickup_time','collection_time');
-      const passengers=getValue('passengers');
-      const luggage=getValue('luggage','large_cases');
-      const journey=getValue('journey_type','journey');
-      const name=getValue('name','customer_name');
-      const customerPhone=getValue('phone','telephone');
-      const customerEmail=getValue('email','customer_email');
-      const details=getValue('details','message','requirements');
-
-      return [
-        'Hello, I would like a transfer quotation.',
-        '',
-        'Pickup: '+pickup,
-        'Destination: '+destination,
-        'Collection date: '+dateValue,
-        'Collection time: '+timeValue,
-        'Passengers: '+passengers,
-        'Luggage / large cases: '+luggage,
-        'Journey type: '+journey,
-        '',
-        'Name: '+name,
-        'Telephone: '+customerPhone,
-        'Email: '+customerEmail,
-        '',
-        'Additional details:',
-        details
-      ].join('\n');
-    };
-
-    const validateForm=()=>{
-      if(!form.reportValidity()) return false;
+      if(status) status.textContent='';
       return true;
     };
 
-    form.querySelectorAll('[data-send-method]').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        if(!validateForm()) return;
-        const method=btn.dataset.sendMethod;
-        const message=buildMessage();
-        const status=form.querySelector('.form-status');
+    quoteForm.addEventListener('click',(event)=>{
+      const button=event.target.closest('[data-quote-action]');
+      if(!button || !quoteForm.contains(button)) return;
 
-        if(method==='whatsapp'){
-          window.open('https://wa.me/'+phone+'?text='+encodeURIComponent(message),'_blank','noopener');
-          if(status) status.textContent='WhatsApp has been opened with your quotation details ready to send.';
-        }else if(method==='email'){
-          const subject='Transfer quotation request';
-          window.location.href='mailto:'+email+
-            '?subject='+encodeURIComponent(subject)+
-            '&body='+encodeURIComponent(message);
-          if(status) status.textContent='Your email application should now open with the quotation details ready to send.';
-        }else if(method==='sms'){
-          const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
-          const separator=isiOS?'&':'?';
-          window.location.href='sms:+'+phone+separator+'body='+encodeURIComponent(message);
-          if(status) status.textContent='Your text messaging app should now open with the quotation details ready to send.';
-        }
-      });
+      event.preventDefault();
+      if(!validateQuote()) return;
+
+      const message=buildQuoteMessage();
+      const action=button.getAttribute('data-quote-action');
+
+      if(action==='whatsapp'){
+        // Same-tab navigation is more reliable on mobile than window.open().
+        window.location.assign(
+          'https://wa.me/'+BUSINESS_PHONE_INT+'?text='+encodeURIComponent(message)
+        );
+        return;
+      }
+
+      if(action==='email'){
+        window.location.href=
+          'mailto:'+BUSINESS_EMAIL+
+          '?subject='+encodeURIComponent('Transfer quote request')+
+          '&body='+encodeURIComponent(message);
+        return;
+      }
+
+      if(action==='sms'){
+        const isiOS=/iPad|iPhone|iPod/.test(navigator.userAgent);
+        const separator=isiOS?'&':'?';
+        window.location.href=
+          'sms:+'+BUSINESS_PHONE_INT+
+          separator+'body='+encodeURIComponent(message);
+      }
     });
 
-    form.addEventListener('submit',e=>e.preventDefault());
+    quoteForm.addEventListener('submit',(event)=>event.preventDefault());
+  }
+
+  // V30: close the native mobile menu when tapping outside it.
+  const nativeMenu=document.getElementById('p28-menu');
+  if(nativeMenu){
+    document.addEventListener('click',(event)=>{
+      if(nativeMenu.open && !nativeMenu.contains(event.target)){
+        nativeMenu.removeAttribute('open');
+      }
+    });
+    document.addEventListener('keydown',(event)=>{
+      if(event.key==='Escape') nativeMenu.removeAttribute('open');
+    });
+    window.addEventListener('resize',()=>{
+      if(window.innerWidth>850) nativeMenu.removeAttribute('open');
+    });
   }
 
   let deferred;
@@ -147,6 +179,6 @@
   });
 
   if('serviceWorker' in navigator){
-    window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js?v=29').catch(()=>{}));
+    window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js?v=30').catch(()=>{}));
   }
 })();

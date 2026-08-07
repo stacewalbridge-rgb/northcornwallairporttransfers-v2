@@ -11,7 +11,7 @@
   <link rel="icon" href="assets/favicon.svg">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" as="image" href="assets/hero-reference.webp">
-  <link rel="stylesheet" href="styles.css?v=29">
+  <link rel="stylesheet" href="styles.css?v=30">
 </head>
 <body class="p23-body">
 <a class="skip" href="#main">Skip to content</a>
@@ -104,9 +104,9 @@
             </select>
           </label>
 
-          <label class="p23-extra">Name<input name="name" required></label>
-          <label class="p23-extra">Telephone<input name="phone" required></label>
-          <label class="p23-extra">Email<input type="email" name="email" required></label>
+          <label class="p23-extra">Name<input name="name"></label>
+          <label class="p23-extra">Telephone<input name="phone"></label>
+          <label class="p23-extra">Email<input type="email" name="email"></label>
           <label class="p23-extra">Large cases
             <select name="luggage"><option>0</option><option>1</option><option>2</option><option>3</option><option>4+</option></select>
           </label>
@@ -199,131 +199,8 @@
   <div class="p23-wrap p23-footer-bottom">© 2026 North Cornwall Airport Transfers. All rights reserved.</div>
 </footer>
 
-<script src="site-config.js?v=29"></script>
-<script src="app.js?v=29"></script>
-
-
-
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  var menu = document.getElementById('p28-menu');
-  if (!menu) return;
-
-  document.addEventListener('click', function (event) {
-    if (menu.open && !menu.contains(event.target)) {
-      menu.removeAttribute('open');
-    }
-  });
-
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' && menu.open) {
-      menu.removeAttribute('open');
-    }
-  });
-
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 850 && menu.open) {
-      menu.removeAttribute('open');
-    }
-  });
-});
-</script>
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('quote-form');
-  if (!form) return;
-
-  const businessPhoneDisplay = '07356 070904';
-  const businessPhoneInternational = '447356070904';
-  const businessEmail = 'info@northcornwallairporttransfers.co.uk';
-
-  function value(name) {
-    const el = form.elements[name];
-    return el ? String(el.value || '').trim() : '';
-  }
-
-  function buildMessage() {
-    const lines = [
-      'Hello North Cornwall Airport Transfers,',
-      '',
-      'I would like a transfer quote.',
-      '',
-      'Pickup: ' + (value('pickup') || 'Not entered'),
-      'Destination: ' + (value('destination') || 'Not entered'),
-      'Date: ' + (value('date') || 'Not entered'),
-      'Time: ' + (value('time') || 'Not entered'),
-      'Passengers: ' + (value('passengers') || 'Not entered'),
-      'Large cases: ' + (value('luggage') || 'Not entered')
-    ];
-
-    if (value('name')) lines.push('Name: ' + value('name'));
-    if (value('phone')) lines.push('Telephone: ' + value('phone'));
-    if (value('email')) lines.push('Email: ' + value('email'));
-    if (value('details')) lines.push('Details: ' + value('details'));
-
-    lines.push('', 'Please let me know the price and availability. Thank you.');
-    return lines.join('\n');
-  }
-
-  function validateJourney() {
-    const required = ['pickup', 'destination', 'date', 'time'];
-    const missing = required.filter(function (name) {
-      return !value(name);
-    });
-
-    const status = form.querySelector('.form-status');
-
-    if (missing.length) {
-      if (status) {
-        status.textContent = 'Please enter your pickup, destination, date and time first.';
-      }
-      const first = form.elements[missing[0]];
-      if (first) first.focus();
-      return false;
-    }
-
-    if (status) status.textContent = '';
-    return true;
-  }
-
-  form.querySelectorAll('[data-quote-action]').forEach(function (button) {
-    button.addEventListener('click', function () {
-      if (!validateJourney()) return;
-
-      const message = buildMessage();
-      const action = button.getAttribute('data-quote-action');
-
-      if (action === 'whatsapp') {
-        window.location.href =
-          'https://wa.me/' + businessPhoneInternational +
-          '?text=' + encodeURIComponent(message);
-        return;
-      }
-
-      if (action === 'email') {
-        const subject = 'Transfer quote request';
-        window.location.href =
-          'mailto:' + businessEmail +
-          '?subject=' + encodeURIComponent(subject) +
-          '&body=' + encodeURIComponent(message);
-        return;
-      }
-
-      if (action === 'sms') {
-        const smsBody = encodeURIComponent(message);
-        const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        const separator = isiOS ? '&' : '?';
-        window.location.href =
-          'sms:+' + businessPhoneInternational + separator + 'body=' + smsBody;
-      }
-    });
-  });
-});
-</script>
+<script src="site-config.js?v=30"></script>
+<script src="app.js?v=30"></script>
 
 </body>
 </html>
