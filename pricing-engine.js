@@ -3,7 +3,6 @@
    Instant postcode pricing engine
    ========================================================= */
 document.addEventListener('DOMContentLoaded', async function () {
-  const GOOGLE_MAPS_KEY = 'AIzaSyB-XFiKNlAOohHgBnEPtzk4gUwFwk-OqAs';
   const postcodeEl = document.getElementById('price-postcode');
   const airportEl = document.getElementById('price-airport');
   const vehicleEl = document.getElementById('price-vehicle');
@@ -27,9 +26,11 @@ document.addEventListener('DOMContentLoaded', async function () {
   function loadGooglePlaces() {
     return new Promise((resolve, reject) => {
       if (window.google?.maps?.places) return resolve();
+      const googleMapsKey = String(window.ROBS_TRAVEL_CONFIG?.googleMapsApiKey || '').trim();
+      if (!googleMapsKey) return reject(new Error('Google Maps configuration unavailable'));
       window.__ncatGoogleReady = resolve;
       const script = document.createElement('script');
-      script.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(GOOGLE_MAPS_KEY) + '&libraries=places&callback=__ncatGoogleReady&v=weekly';
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(googleMapsKey) + '&libraries=places&callback=__ncatGoogleReady&v=weekly';
       script.async = true;
       script.defer = true;
       script.onerror = reject;
