@@ -3,6 +3,7 @@
    Instant postcode pricing engine
    ========================================================= */
 document.addEventListener('DOMContentLoaded', async function () {
+  const GOOGLE_MAPS_KEY = 'AIzaSyB-XFiKNlAOohHgBnEPtzk4gUwFwk-OqAs';
   const postcodeEl = document.getElementById('price-postcode');
   const airportEl = document.getElementById('price-airport');
   const vehicleEl = document.getElementById('price-vehicle');
@@ -21,6 +22,48 @@ document.addEventListener('DOMContentLoaded', async function () {
 
   let config = null;
   let lastQuote = null;
+  let selectedPickup = null;
+
+  function loadGooglePlaces() {
+    return new Promise((resolve, reject) => {
+      if (window.google?.maps?.places) return resolve();
+      window.__ncatGoogleReady = resolve;
+      const script = document.createElement('script');
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=' + encodeURIComponent(GOOGLE_MAPS_KEY) + '&libraries=places&callback=__ncatGoogleReady&v=weekly';
+      script.async = true;
+      script.defer = true;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+
+  try {
+    await loadGooglePlaces();
+    const autocomplete = new google.maps.places.Autocomplete(postcodeEl, {
+      componentRestrictions: { country: 'gb' },
+      fields: ['formatted_address', 'geometry', 'name', 'place_id']
+    });
+    autocomplete.addListener('place_changed', function () {
+      const place = autocomplete.getPlace();
+      if (!place.geometry?.location) {
+        selectedPickup = null;
+        setStatus('Please choose the pickup from the Google suggestions.', 'error');
+        return;
+      }
+      selectedPickup = {
+        address: place.formatted_address || place.name || postcodeEl.value,
+        latitude: place.geometry.location.lat(),
+        longitude: place.geometry.location.lng(),
+        placeId: place.place_id || ''
+      };
+      postcodeEl.value = selectedPickup.address;
+      setStatus('Google pickup location selected.', 'success');
+      resetResults();
+    });
+    postcodeEl.addEventListener('input', function () { selectedPickup = null; });
+  } catch (error) {
+    setStatus('Google address search could not load. Please refresh and try again.', 'error');
+  }
 
   try {
     const response = await fetch('pricing-config.json', { cache: 'no-store' });
@@ -95,18 +138,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     el.addEventListener('input', resetResults);
   });
 
-  async function lookupPostcode(postcode) {
-    const clean = normalizePostcode(postcode);
-    if (!clean) throw new Error('Please enter your pickup postcode.');
-    const response = await fetch(config.postcodeLookup + encodeURIComponent(clean), { cache: 'no-store' });
-    if (!response.ok) throw new Error('We could not verify that postcode. Please check it and try again.');
-    const data = await response.json();
-    if (!data || !data.result) throw new Error('We could not verify that postcode. Please check it and try again.');
-    return data.result;
+  async function lookupPostcode() {
+    if (!selectedPickup) throw new Error('Please choose your pickup address or postcode from the Google suggestions.');
+    return selectedPickup;
   }
 
   function validateCommon() {
-    if (!postcodeEl.value.trim()) return 'Please enter your pickup postcode.';
+    if (!postcodeEl.value.trim()) return 'Please enter your pickup address or postcode.';
+    if (!selectedPickup) return 'Please choose the pickup from the Google suggestions.';
     if (!airportEl.value) return 'Please choose an airport.';
     if (!vehicleEl.value) return 'Please choose a vehicle.';
     if (!passengersEl.value) return 'Please choose the number of passengers.';
@@ -132,11 +171,11 @@ document.addEventListener('DOMContentLoaded', async function () {
       return;
     }
 
-    setStatus('Checking postcode and pricing zone…', 'working');
+    setStatus('Checking Google pickup location and pricing zone…', 'working');
     calcBtn.disabled = true;
 
     try {
-      const postcodeData = await lookupPostcode(postcodeEl.value);
+      const postcodeData = await lookupPostcode();
       const distance = haversineMiles(
         config.budeCentre.lat,
         config.budeCentre.lng,
@@ -149,7 +188,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       const vehicle = vehicleEl.value;
 
       const baseQuote = {
-        postcode: formatPostcode(postcodeEl.value),
+        postcode: postcodeData.address,
         airportKey: airportEl.value,
         airport: airport ? airport.label : airportEl.options[airportEl.selectedIndex].text,
         vehicle,
@@ -227,7 +266,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         lastQuote.manual ? 'I would like a personalised airport transfer quotation.' :
         'I would like to confirm this fixed-fare airport transfer enquiry.',
       '',
-      'Pickup postcode: ' + lastQuote.postcode,
+        'Pickup location: ' + lastQuote.postcode,
       'Airport: ' + lastQuote.airport,
       'Vehicle: ' + lastQuote.vehicleLabel,
       'Passengers: ' + lastQuote.passengers,
