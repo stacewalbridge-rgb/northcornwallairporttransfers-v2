@@ -1,1 +1,15 @@
 /fleet.html /vehicles.html 301
+
+# Consolidate duplicate location URLs onto the richer /locations/ pages.
+/areas/bideford-airport-transfers.html /locations/bideford-airport-transfers.html 301
+/areas/bodmin-airport-transfers.html /locations/bodmin-airport-transfers.html 301
+/areas/boscastle-airport-transfers.html /locations/boscastle-airport-transfers.html 301
+/areas/bude-airport-transfers.html /locations/bude-airport-transfers.html 301
+/areas/camelford-airport-transfers.html /locations/camelford-airport-transfers.html 301
+/areas/holsworthy-airport-transfers.html /locations/holsworthy-airport-transfers.html 301
+/areas/launceston-airport-transfers.html /locations/launceston-airport-transfers.html 301
+/areas/okehampton-airport-transfers.html /locations/okehampton-airport-transfers.html 301
+/areas/padstow-airport-transfers.html /locations/padstow-airport-transfers.html 301
+/areas/port-isaac-airport-transfers.html /locations/port-isaac-airport-transfers.html 301
+/areas/tintagel-airport-transfers.html /locations/tintagel-airport-transfers.html 301
+/areas/wadebridge-airport-transfers.html /locations/wadebridge-airport-transfers.html 301
