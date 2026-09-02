@@ -1,5 +1,5 @@
 https://www.northcornwallairporttransfers.co.uk/* https://northcornwallairporttransfers.co.uk/:splat 301
-/about /about.html 301
+/about.html /about 301
 /fleet.html /vehicles.html 301
 
 # Consolidate duplicate location URLs onto the richer /locations/ pages.
