@@ -22,6 +22,56 @@ document.addEventListener('DOMContentLoaded', async function () {
   let config = null;
   let lastQuote = null;
   let selectedPickup = null;
+  let selectedHeathrowTerminal = null;
+
+  const HEATHROW_TERMINALS = [
+    { n:'2', label:'Heathrow Airport – Terminal 2' },
+    { n:'3', label:'Heathrow Airport – Terminal 3' },
+    { n:'4', label:'Heathrow Airport – Terminal 4' },
+    { n:'5', label:'Heathrow Airport – Terminal 5' }
+  ];
+
+  function closeHeathrowPicker() {
+    document.getElementById('ncatHeathrowPicker')?.remove();
+  }
+
+  function openHeathrowPicker() {
+    closeHeathrowPicker();
+    const host = document.createElement('div');
+    host.id = 'ncatHeathrowPicker';
+    host.innerHTML =
+      '<div style="position:fixed;inset:0;z-index:2147483647;background:rgba(2,8,18,.92);display:grid;place-items:center;padding:18px">' +
+      '<section role="dialog" aria-modal="true" aria-labelledby="ncatHwTitle" style="position:relative;width:min(94vw,520px);background:#fff;color:#111827;border-radius:24px;padding:24px 20px 22px;box-shadow:0 24px 70px rgba(0,0,0,.55);text-align:center">' +
+      '<button type="button" data-hw-close aria-label="Close" style="position:absolute;right:10px;top:8px;width:42px;height:42px;border:0;background:transparent;color:#111827;font-size:32px">×</button>' +
+      '<div style="font-size:34px;margin:2px 0 8px">✈️</div>' +
+      '<h2 id="ncatHwTitle" style="font-size:26px;line-height:1.1;margin:0 32px 8px;font-weight:900">Which Heathrow terminal?</h2>' +
+      '<p style="margin:0 auto 18px;max-width:430px;color:#475569;font-size:15px;line-height:1.4">Choose Terminal 2, 3, 4 or 5 so your quote uses the correct Heathrow destination.</p>' +
+      '<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">' +
+      HEATHROW_TERMINALS.map(t =>
+        '<button type="button" data-hw-terminal="'+t.n+'" style="min-height:82px;border:2px solid #d5a51f;border-radius:17px;background:#111827;color:#fff;padding:12px">' +
+        '<strong style="display:block;font-size:20px">Terminal '+t.n+'</strong><span style="font-size:13px;color:#f7d66d;font-weight:750">Heathrow Airport</span></button>'
+      ).join('') +
+      '</div></section></div>';
+    document.body.appendChild(host);
+    host.querySelector('[data-hw-close]').onclick = () => {
+      closeHeathrowPicker();
+      if (!selectedHeathrowTerminal) airportEl.value = '';
+    };
+    host.firstElementChild.onclick = e => {
+      if (e.target === e.currentTarget) {
+        closeHeathrowPicker();
+        if (!selectedHeathrowTerminal) airportEl.value = '';
+      }
+    };
+    host.querySelectorAll('[data-hw-terminal]').forEach(button => {
+      button.onclick = () => {
+        selectedHeathrowTerminal = HEATHROW_TERMINALS.find(t => t.n === button.dataset.hwTerminal) || null;
+        closeHeathrowPicker();
+        resetResults();
+        setStatus(selectedHeathrowTerminal.label + ' selected.', 'success');
+      };
+    });
+  }
 
   function loadGooglePlaces() {
     return new Promise((resolve, reject) => {
@@ -134,9 +184,19 @@ document.addEventListener('DOMContentLoaded', async function () {
     resetResults();
   });
 
-  [postcodeEl, airportEl, passengersEl].forEach(el => {
+  [postcodeEl, passengersEl].forEach(el => {
     el.addEventListener('change', resetResults);
     el.addEventListener('input', resetResults);
+  });
+
+  airportEl.addEventListener('change', function () {
+    resetResults();
+    if (airportEl.value === 'heathrow') {
+      selectedHeathrowTerminal = null;
+      openHeathrowPicker();
+    } else {
+      selectedHeathrowTerminal = null;
+    }
   });
 
   async function lookupPostcode() {
@@ -148,6 +208,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (!postcodeEl.value.trim()) return 'Please enter your pickup address or postcode.';
     if (!selectedPickup) return 'Please choose the pickup from the Google suggestions.';
     if (!airportEl.value) return 'Please choose an airport.';
+    if (airportEl.value === 'heathrow' && !selectedHeathrowTerminal) return 'Please choose the Heathrow terminal.';
     if (!vehicleEl.value) return 'Please choose a vehicle.';
     if (!passengersEl.value) return 'Please choose the number of passengers.';
     if (luggageEl.value === '') return 'Please tell us how much luggage will be carried.';
@@ -191,7 +252,8 @@ document.addEventListener('DOMContentLoaded', async function () {
       const baseQuote = {
         postcode: postcodeData.address,
         airportKey: airportEl.value,
-        airport: airport ? airport.label : airportEl.options[airportEl.selectedIndex].text,
+        airport: airportEl.value === 'heathrow' && selectedHeathrowTerminal ? selectedHeathrowTerminal.label : (airport ? airport.label : airportEl.options[airportEl.selectedIndex].text),
+        heathrowTerminal: selectedHeathrowTerminal ? selectedHeathrowTerminal.n : null,
         vehicle,
         vehicleLabel: vehicleEl.options[vehicleEl.selectedIndex].text,
         passengers: passengersEl.value,
