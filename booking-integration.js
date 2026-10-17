@@ -1,6 +1,6 @@
 window.NCAT_BOOKING = {
   provider: "Robs Travel",
-  bookingUrl: "https://robs-travel.co.uk/",
+  bookingUrl: "https://book.robs-travel.co.uk/whydrive/?source=northcornwall",
   relationship: "North Cornwall Airport Transfers is part of the Robs Travel Group."
 };
 
